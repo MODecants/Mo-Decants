@@ -448,8 +448,15 @@
     transition:color .3s;
   }
   .modal-close:hover{color:var(--gold-light);}
-  .modal-body h3{font-size:1.7rem;color:var(--ivory);margin-bottom:1.2rem;}
+  .modal-body h3{font-size:1.7rem;color:var(--ivory);margin-bottom:.9rem;}
   .modal-body .eyebrow{margin-bottom:.6rem;}
+  .modal-notes{margin-bottom:1.5rem;}
+  .modal-notes .notes-line{color:var(--ivory-dim);font-size:.86rem;line-height:1.65;margin-bottom:.55rem;}
+  .modal-notes .notes-line:last-child{margin-bottom:0;}
+  .modal-notes .notes-line b{
+    color:var(--gold-light);font-weight:400;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;
+  }
   .size-select{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.6rem;}
   .size-option{
     display:flex;align-items:center;justify-content:space-between;
@@ -930,6 +937,7 @@
     <div class="modal-body">
       <span class="eyebrow">M&amp;O Decants</span>
       <h3 id="modalName">Nombre del perfume</h3>
+      <div class="modal-notes" id="modalNotes"></div>
       <div class="size-select" id="modalSizes"></div>
       <div class="modal-total">Total: <b id="modalTotal">$0</b></div>
       <a href="#" target="_blank" class="btn-primary" id="modalBuy" style="text-align:center;">Pedir por WhatsApp</a>
@@ -1019,9 +1027,53 @@
   const modalTotal = document.getElementById('modalTotal');
   const modalBuy = document.getElementById('modalBuy');
   const modalImg = document.getElementById('modalImg');
+  const modalNotes = document.getElementById('modalNotes');
   const modalClose = document.getElementById('modalClose');
   const WA_NUMBER = '573178143757';
   const fmt = n => '$' + Number(n).toLocaleString('es-CO');
+
+  const PRODUCT_INFO = {
+    nightout: {
+      notes: "Fruta del dragón, cardamomo, gamuza, haba tonka y pachulí.",
+      occasion: "Salidas nocturnas y fiestas — climas fríos, uso en otoño/invierno."
+    },
+    hawasice: {
+      notes: "Manzana, bergamota siciliana, anís estrellado, almizcle y madera a la deriva.",
+      occasion: "Uso diario en clima cálido — funciona de día a noche."
+    },
+    mandarinsky: {
+      notes: "Mandarina, azafrán, caramelo, haba tonka y vetiver.",
+      occasion: "Casual de día, clima cálido — fresco y versátil."
+    },
+    hawasmalibu: {
+      notes: "Piña, pomelo, iris, ámbar y cashmeran.",
+      occasion: "Verano y playa — ideal para el día."
+    },
+    khamrahqahwa: {
+      notes: "Canela, cardamomo, café, praliné y vainilla.",
+      occasion: "Tardes y noches frías — para ocasiones especiales."
+    },
+    badeoudhonor: {
+      notes: "Piña, crème brûlée, canela, vainilla y sándalo.",
+      occasion: "Noches especiales — gourmand intenso, otoño/invierno."
+    },
+    khamrahdukhan: {
+      notes: "Incienso, tabaco, praliné, ámbar y especias.",
+      occasion: "Noche y ocasiones formales — clima frío."
+    },
+    hawasforhim: {
+      notes: "Manzana, bergamota, ciruela, ámbar gris y madera a la deriva.",
+      occasion: "Uso diario, oficina — primavera y verano."
+    },
+    clubdenuit: {
+      notes: "Piña, grosella negra, jazmín, almizcle y pachulí.",
+      occasion: "Salidas de noche — versátil todo el año."
+    },
+    badeoudamethyst: {
+      notes: "Pimienta rosa, rosa turca, jazmín, oud y vainilla.",
+      occasion: "Noche elegante — ocasiones especiales, otoño/invierno."
+    }
+  };
 
   function openProductModal(el){
     const name = el.dataset.name;
@@ -1030,6 +1082,10 @@
     const price5 = el.dataset.price5;
     const price10 = el.dataset.price10;
     modalName.textContent = name;
+    const info = PRODUCT_INFO[pid];
+    modalNotes.innerHTML = info
+      ? `<p class="notes-line"><b>Notas destacadas:</b> ${info.notes}</p><p class="notes-line"><b>Ideal para:</b> ${info.occasion}</p>`
+      : '';
     modalSizes.innerHTML = '';
 
     const opt5 = document.createElement('label');
