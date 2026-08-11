@@ -526,8 +526,24 @@
     background:none;border:none;color:var(--ivory-dim);
     font-size:1.4rem;cursor:pointer;line-height:1;
     transition:color .3s;
+    z-index:10;
   }
   .modal-close:hover{color:var(--gold-light);}
+  .combo-modal-card{
+    background:var(--black);
+    border:1px solid var(--gold-deep);
+    max-width:820px;width:100%;
+    position:relative;
+    padding:2.8rem 2.4rem;
+    max-height:88vh;
+    overflow:auto;
+    transform:translateY(24px);
+    transition:transform .45s var(--ease);
+  }
+  .modal-overlay.open .combo-modal-card{transform:translateY(0);}
+  .combo-modal-body h3{font-size:1.9rem;color:var(--ivory);margin:.5rem 0 1.3rem;}
+  .combo-modal-offer{color:var(--ivory-dim);font-size:.98rem;line-height:1.75;margin-bottom:2.2rem;max-width:580px;}
+  .combo-modal-offer b{color:var(--gold-light);font-weight:400;font-family:'Cormorant Garamond',serif;font-style:italic;}
   .modal-body h3{font-size:1.7rem;color:var(--ivory);margin-bottom:.9rem;}
   .modal-body .eyebrow{margin-bottom:.6rem;}
   .modal-notes{margin-bottom:1.5rem;}
@@ -704,6 +720,7 @@
   </a>
   <div class="nav-links" id="navLinks">
     <a href="#/coleccion" data-route="coleccion">Colección</a>
+    <a href="#/decant" data-route="decant">¿Qué es un decant?</a>
     <a href="#/proceso" data-route="proceso">Cómo funcionamos</a>
     <a href="#/confianza" data-route="confianza">Autenticidad</a>
     <a href="#/contacto" data-route="contacto">Contacto</a>
@@ -892,11 +909,49 @@
     <div class="container">
       <div class="combo-promo reveal">
         <p>Sabemos que un solo perfume no es suficiente — arma tu pedido a tu medida.</p>
-        <a href="https://wa.me/573178143757?text=Hola%2C%20quiero%20armar%20mi%20propio%20combo%20de%20decants%20en%205ml.%20%C2%BFMe%20ayudan%20a%20elegir%3F" target="_blank" class="btn-primary">Arma tu combo</a>
+        <a href="#" class="btn-primary" id="comboOpenBtn">Arma tu combo</a>
       </div>
       <div class="fullbottle-cta reveal">
-        <p>Si una decantación para ti no es suficiente, contáctanos para solicitar el perfume completo que quieras tener.</p>
+        <p>Si una decantación para ti no es suficiente, contáctanos para solicitar el perfume completo que quieras obtener.</p>
         <a href="https://wa.me/573178143757?text=Hola%2C%20quiero%20informacion%20sobre%20comprar%20el%20frasco%20completo%20de%20una%20fragancia." target="_blank" class="btn-ghost">Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= ¿QUÉ ES UN DECANT? ======================= -->
+<div class="page" id="page-decant">
+  <div class="page-head">
+    <span class="eyebrow">La pregunta que más nos hacen</span>
+    <h1>¿Qué es un decant?</h1>
+    <p>Antes de elegir tamaño, vale la pena entender exactamente qué estás comprando.</p>
+  </div>
+  <section class="first-in-page">
+    <div class="container">
+      <div class="decant-info reveal" style="margin:0 auto;">
+        <p>Un decant es una porción de un perfume 100% original, fraccionada a mano desde el frasco de casa —nunca de mezclas, imitaciones ni recargas— y envasada en un atomizador de vidrio sellado. Es la misma fragancia que encuentras en el frasco grande, en el tamaño justo para probarla, llevarla contigo o regalarla sin pagar el precio de un frasco completo.</p>
+        <div class="decant-stats">
+          <div class="decant-stat"><b>5ml</b><span>≈ 60–70 aplicaciones</span></div>
+          <div class="decant-stat"><b>10ml</b><span>≈ 120–140 aplicaciones</span></div>
+        </div>
+      </div>
+      <div class="decant-divider reveal" style="margin-top:3.6rem;"></div>
+      <div class="steps reveal" style="margin-top:3.6rem;border-top:none;">
+        <div class="step">
+          <span class="num">✦</span>
+          <h3>¿Por qué decantar?</h3>
+          <p>Te permite probar fragancias de nicho y de autor sin comprometerte con un frasco completo, o llevar contigo tu perfume favorito sin cargar el envase original.</p>
+        </div>
+        <div class="step">
+          <span class="num">✦</span>
+          <h3>¿Cómo se conserva?</h3>
+          <p>Sellado en vidrio, lejos de la luz directa y el calor, un decant conserva su aroma igual de bien que el frasco original durante meses.</p>
+        </div>
+        <div class="step">
+          <span class="num">✦</span>
+          <h3>¿Es igual de original?</h3>
+          <p>Sí. Cada decant proviene directamente del frasco de casa, con el mismo lote, la misma concentración y el mismo aroma.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1027,6 +1082,7 @@
       <div class="footer-col">
         <h5>Explorar</h5>
         <a href="#/coleccion" data-route="coleccion">Colección</a>
+        <a href="#/decant" data-route="decant">¿Qué es un decant?</a>
         <a href="#/proceso" data-route="proceso">Cómo funcionamos</a>
         <a href="#/confianza" data-route="confianza">Autenticidad</a>
       </div>
@@ -1073,6 +1129,115 @@
   </div>
 </div>
 
+<!-- ======================= MODAL: arma tu combo ======================= -->
+<div class="modal-overlay" id="comboModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="combo-modal-card">
+    <button class="modal-close" id="comboModalClose" aria-label="Cerrar">&times;</button>
+    <div class="combo-modal-body">
+      <span class="eyebrow">M&amp;O Decants</span>
+      <h3>Arma tu combo</h3>
+      <p class="combo-modal-offer">Por la compra de <b>3 fragancias en 5ml</b>, te obsequiamos un <b>15% de descuento</b> sobre el valor total de tu selección.</p>
+
+      <div class="combo-step">
+        <span class="combo-step-label">Paso 1 · ¿Cuántas fragancias en 5ml?</span>
+        <div class="qty-select" id="comboQty">
+          <button type="button" class="qty-btn" data-qty="2">2</button>
+          <button type="button" class="qty-btn" data-qty="3">3</button>
+        </div>
+      </div>
+
+      <div class="combo-step">
+        <span class="combo-step-label">Paso 2 · Elige tus fragancias</span>
+        <div class="combo-grid" id="comboGrid">
+
+          <label class="combo-item" data-pid="nightout" data-name="9PM Night Out" data-price5="25000">
+            <input type="checkbox" class="combo-check" value="nightout" disabled>
+            <span class="combo-photo"><img class="pid-img" data-pid="nightout" alt="9PM Night Out"></span>
+            <span class="combo-name">9PM Night Out</span>
+            <span class="combo-price">$25.000</span>
+          </label>
+
+          <label class="combo-item" data-pid="hawasice" data-name="Hawas Ice" data-price5="27000">
+            <input type="checkbox" class="combo-check" value="hawasice" disabled>
+            <span class="combo-photo"><img class="pid-img" data-pid="hawasice" alt="Hawas Ice"></span>
+            <span class="combo-name">Hawas Ice</span>
+            <span class="combo-price">$27.000</span>
+          </label>
+
+          <label class="combo-item" data-pid="mandarinsky" data-name="Mandarin Sky" data-price5="25000">
+            <input type="checkbox" class="combo-check" value="mandarinsky" disabled>
+            <span class="combo-photo"><img class="pid-img" data-pid="mandarinsky" alt="Mandarin Sky"></span>
+            <span class="combo-name">Mandarin Sky</span>
+            <span class="combo-price">$25.000</span>
+          </label>
+
+          <label class="combo-item" data-pid="hawasmalibu" data-name="Hawas Malibu" data-price5="25000">
+            <input type="checkbox" class="combo-check" value="hawasmalibu" disabled>
+            <span class="combo-photo"><img class="pid-img" data-pid="hawasmalibu" alt="Hawas Malibu"></span>
+            <span class="combo-name">Hawas Malibu</span>
+            <span class="combo-price">$25.000</span>
+          </label>
+
+          <label class="combo-item" data-pid="rebel" data-name="9PM Rebel" data-price5="25000">
+            <input type="checkbox" class="combo-check" value="rebel" disabled>
+            <span class="combo-photo"><img class="pid-img" data-pid="rebel" alt="9PM Rebel"></span>
+            <span class="combo-name">9PM Rebel</span>
+            <span class="combo-price">$25.000</span>
+          </label>
+
+          <label class="combo-item" data-pid="khamrahqahwa" data-name="Khamrah Qahwa" data-price5="25000">
+            <input type="checkbox" class="combo-check" value="khamrahqahwa" disabled>
+            <span class="combo-photo"><img class="pid-img" data-pid="khamrahqahwa" alt="Khamrah Qahwa"></span>
+            <span class="combo-name">Khamrah Qahwa</span>
+            <span class="combo-price">$25.000</span>
+          </label>
+
+          <label class="combo-item" data-pid="khamrahdukhan" data-name="Khamrah Dukhan" data-price5="25000">
+            <input type="checkbox" class="combo-check" value="khamrahdukhan" disabled>
+            <span class="combo-photo"><img class="pid-img" data-pid="khamrahdukhan" alt="Khamrah Dukhan"></span>
+            <span class="combo-name">Khamrah Dukhan</span>
+            <span class="combo-price">$25.000</span>
+          </label>
+
+          <label class="combo-item" data-pid="hawasforhim" data-name="Hawas For Him" data-price5="25000">
+            <input type="checkbox" class="combo-check" value="hawasforhim" disabled>
+            <span class="combo-photo"><img class="pid-img" data-pid="hawasforhim" alt="Hawas For Him"></span>
+            <span class="combo-name">Hawas For Him</span>
+            <span class="combo-price">$25.000</span>
+          </label>
+
+          <label class="combo-item" data-pid="badeoudhonor" data-name="Bade'e Al Oud Honor & Glory" data-price5="25000">
+            <input type="checkbox" class="combo-check" value="badeoudhonor" disabled>
+            <span class="combo-photo"><img class="pid-img" data-pid="badeoudhonor" alt="Bade'e Al Oud Honor &amp; Glory"></span>
+            <span class="combo-name">Bade'e Al Oud Honor &amp; Glory</span>
+            <span class="combo-price">$25.000</span>
+          </label>
+
+          <label class="combo-item" data-pid="badeoudamethyst" data-name="Bade'e Al Oud Amethyst" data-price5="25000">
+            <input type="checkbox" class="combo-check" value="badeoudamethyst" disabled>
+            <span class="combo-photo"><img class="pid-img" data-pid="badeoudamethyst" alt="Bade'e Al Oud Amethyst"></span>
+            <span class="combo-name">Bade'e Al Oud Amethyst</span>
+            <span class="combo-price">$25.000</span>
+          </label>
+
+          <label class="combo-item" data-pid="clubdenuit" data-name="Club De Nuit Intense EDT" data-price5="25000">
+            <input type="checkbox" class="combo-check" value="clubdenuit" disabled>
+            <span class="combo-photo"><img class="pid-img" data-pid="clubdenuit" alt="Club De Nuit Intense EDT"></span>
+            <span class="combo-name">Club De Nuit Intense EDT</span>
+            <span class="combo-price">$25.000</span>
+          </label>
+
+        </div>
+      </div>
+
+      <div class="combo-summary">
+        <div class="combo-total">Total: <b id="comboTotal">$0</b></div>
+        <a href="#" target="_blank" class="btn-primary disabled" id="comboBuy" aria-disabled="true">Pedir por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
@@ -1093,7 +1258,7 @@
     if(e.key === 'Escape') setMenuOpen(false);
   });
 
-  const ROUTES = ['home','coleccion','proceso','confianza','contacto'];
+  const ROUTES = ['home','coleccion','decant','proceso','confianza','contacto'];
   function routeFromHash(){
     const h = window.location.hash.replace('#/','').replace('#','');
     return ROUTES.includes(h) ? h : 'home';
@@ -1306,6 +1471,98 @@
   modalClose.addEventListener('click', closeProductModal);
   modal.addEventListener('click', e => { if(e.target === modal) closeProductModal(); });
   window.addEventListener('keydown', e => { if(e.key === 'Escape') closeProductModal(); });
+
+  /* ---------- combo modal ---------- */
+  const comboModal = document.getElementById('comboModal');
+  const comboOpenBtn = document.getElementById('comboOpenBtn');
+  const comboModalClose = document.getElementById('comboModalClose');
+  const comboQtyBtns = document.querySelectorAll('.qty-btn');
+  const comboChecks = document.querySelectorAll('.combo-check');
+  const comboTotalEl = document.getElementById('comboTotal');
+  const comboBuy = document.getElementById('comboBuy');
+  let comboMaxQty = 0;
+
+  function resetCombo(){
+    comboMaxQty = 0;
+    comboQtyBtns.forEach(b => b.classList.remove('active'));
+    comboChecks.forEach(c => {
+      c.checked = false;
+      c.disabled = true;
+      c.closest('.combo-item').classList.remove('disabled');
+    });
+    comboTotalEl.textContent = '$0';
+    comboBuy.classList.add('disabled');
+    comboBuy.setAttribute('aria-disabled', 'true');
+    comboBuy.href = '#';
+  }
+
+  function updateComboEnablement(checkedCount){
+    comboChecks.forEach(c => {
+      const item = c.closest('.combo-item');
+      if(!c.checked && checkedCount >= comboMaxQty){
+        c.disabled = true;
+        item.classList.add('disabled');
+      } else {
+        c.disabled = false;
+        item.classList.remove('disabled');
+      }
+    });
+  }
+
+  function updateComboTotal(){
+    const checked = Array.from(document.querySelectorAll('.combo-check:checked'));
+    const sum = checked.reduce((acc,c) => acc + Number(c.closest('.combo-item').dataset.price5), 0);
+    let total = sum;
+    let discountApplied = false;
+    if(comboMaxQty === 3 && checked.length === 3){
+      total = Math.round(sum * 0.85);
+      discountApplied = true;
+    }
+    comboTotalEl.textContent = fmt(total);
+    updateComboEnablement(checked.length);
+
+    const ready = comboMaxQty > 0 && checked.length === comboMaxQty;
+    comboBuy.classList.toggle('disabled', !ready);
+    comboBuy.setAttribute('aria-disabled', ready ? 'false' : 'true');
+
+    if(ready){
+      const names = checked.map(c => c.closest('.combo-item').dataset.name).join(', ');
+      let msg = `Hola, quiero armar mi combo de ${checked.length} decants de 5ml: ${names}.`;
+      msg += discountApplied ? ` Con el 15% de descuento el total es ${fmt(total)}.` : ` Total: ${fmt(total)}.`;
+      comboBuy.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+    } else {
+      comboBuy.href = '#';
+    }
+  }
+
+  comboQtyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      comboMaxQty = Number(btn.dataset.qty);
+      comboQtyBtns.forEach(b => b.classList.toggle('active', b === btn));
+      comboChecks.forEach(c => { c.checked = false; c.closest('.combo-item').classList.remove('disabled'); });
+      updateComboTotal();
+    });
+  });
+  comboChecks.forEach(c => c.addEventListener('change', updateComboTotal));
+
+  function openComboModal(){
+    resetCombo();
+    comboModal.classList.add('open');
+    comboModal.setAttribute('aria-hidden', 'false');
+  }
+  function closeComboModal(){
+    comboModal.classList.remove('open');
+    comboModal.setAttribute('aria-hidden', 'true');
+  }
+  if(comboOpenBtn){
+    comboOpenBtn.addEventListener('click', e => {
+      e.preventDefault();
+      openComboModal();
+    });
+  }
+  comboModalClose.addEventListener('click', closeComboModal);
+  comboModal.addEventListener('click', e => { if(e.target === comboModal) closeComboModal(); });
+  window.addEventListener('keydown', e => { if(e.key === 'Escape') closeComboModal(); });
 </script>
 </body>
 </html>
