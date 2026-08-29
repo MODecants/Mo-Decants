@@ -412,31 +412,28 @@
   }
   .combo-promo{
     text-align:center;
-    border:1px solid var(--line);
-    padding:2.8rem 2rem;
-    margin-bottom:3.2rem;
-    background:radial-gradient(circle at 50% 30%, rgba(201,164,76,.08), transparent 70%);
+    border:1px solid var(--gold-deep);
+    padding:3.6rem 2.4rem;
+    margin-bottom:2.4rem;
+    background:radial-gradient(circle at 50% 24%, rgba(201,164,76,.18), transparent 72%);
+    position:relative;
   }
+  .combo-promo .eyebrow{display:block;margin-bottom:1rem;}
+  .combo-promo h3{
+    font-size:clamp(1.8rem, 3.6vw, 2.5rem);
+    color:var(--ivory);
+    margin-bottom:1.1rem;
+  }
+  .combo-promo h3 em{color:var(--gold-light);font-style:italic;}
   .combo-promo p{
-    color:var(--ivory-dim);font-size:1.15rem;line-height:1.7;margin-bottom:1.5rem;
-    font-family:'Cormorant Garamond',serif;font-style:italic;
-    max-width:520px;margin-left:auto;margin-right:auto;
+    color:var(--ivory-dim);font-size:1.05rem;line-height:1.75;
+    max-width:540px;margin:0 auto 1.8rem;
   }
   .combo-step{margin-bottom:3.2rem;}
   .combo-step-label{
     display:block;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
     color:var(--gold-deep);margin-bottom:1.3rem;
   }
-  .qty-select{display:flex;gap:1rem;}
-  .qty-btn{
-    width:56px;height:56px;
-    border:1px solid var(--gold-deep);
-    background:transparent;color:var(--ivory);
-    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;
-    cursor:pointer;transition:all .3s var(--ease);
-  }
-  .qty-btn:hover{border-color:var(--gold);color:var(--gold-light);}
-  .qty-btn.active{background:linear-gradient(135deg, var(--gold-light), var(--gold));color:var(--black-deep);border-color:var(--gold);}
   .combo-grid{
     display:grid;
     grid-template-columns:repeat(5,1fr);
@@ -464,13 +461,21 @@
   .combo-total b{color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;}
   .fullbottle-cta{
     text-align:center;
-    border-top:1px solid var(--line);
-    margin-top:3.4rem;
-    padding-top:3.4rem;
+    border:1px solid var(--gold-deep);
+    padding:3.6rem 2.4rem;
+    background:radial-gradient(circle at 50% 26%, rgba(201,164,76,.14), transparent 72%);
+    position:relative;
   }
+  .fullbottle-cta .eyebrow{display:block;margin-bottom:1rem;}
+  .fullbottle-cta h3{
+    font-size:clamp(1.7rem, 3.4vw, 2.4rem);
+    color:var(--ivory);
+    margin-bottom:1.1rem;
+  }
+  .fullbottle-cta h3 em{color:var(--gold-light);font-style:italic;}
   .fullbottle-cta p{
     color:var(--ivory-dim);font-size:1rem;line-height:1.75;max-width:520px;
-    margin:0 auto 1.5rem;
+    margin:0 auto 1.8rem;
   }
   .modal-overlay{
     position:fixed;inset:0;z-index:100;
@@ -891,12 +896,16 @@
   <section>
     <div class="container">
       <div class="combo-promo reveal">
-        <p>Sabemos que un solo perfume no es suficiente — arma tu pedido a tu medida.</p>
+        <span class="eyebrow">15% off en 3 o más fragancias</span>
+        <h3>Sabemos que un solo perfume <em>no es suficiente</em></h3>
+        <p>Combina las fragancias que quieras en 5ml y arma tu pedido a tu medida — mientras más elijas, más ahorras.</p>
         <a href="#" class="btn-primary" id="comboOpenBtn">Arma tu combo</a>
       </div>
       <div class="fullbottle-cta reveal">
-        <p>Si una decantación para ti no es suficiente, contáctanos para solicitar el perfume completo que quieras obtener.</p>
-        <a href="https://wa.me/573178143757?text=Hola%2C%20quiero%20informacion%20sobre%20comprar%20el%20frasco%20completo%20de%20una%20fragancia." target="_blank" class="btn-ghost">Escribir por WhatsApp</a>
+        <span class="eyebrow">¿No la tenemos en decant?</span>
+        <h3>Pide el frasco <em>completo</em></h3>
+        <p>Si una decantación no es suficiente, contáctanos directamente y coordinamos la fragancia completa que quieras obtener — hablando contigo, sin intermediarios.</p>
+        <a href="https://wa.me/573178143757?text=Hola%2C%20quiero%20informacion%20sobre%20comprar%20el%20frasco%20completo%20de%20una%20fragancia." target="_blank" class="btn-primary">Escribir por WhatsApp</a>
       </div>
     </div>
   </section>
@@ -1112,81 +1121,73 @@
     <div class="combo-modal-body">
       <span class="eyebrow">M&amp;O Decants</span>
       <h3>Arma tu combo</h3>
-      <p class="combo-modal-offer">Por la compra de <b>3 fragancias en 5ml</b>, te obsequiamos un <b>15% de descuento</b> sobre el valor total de tu selección.</p>
+      <p class="combo-modal-offer">Por la compra de <b>3 o más fragancias de 5ml</b>, te obsequiamos un <b>15% de descuento</b> sobre el valor total de tu selección.</p>
 
       <div class="combo-step">
-        <span class="combo-step-label">Paso 1 · ¿Cuántas fragancias en 5ml?</span>
-        <div class="qty-select" id="comboQty">
-          <button type="button" class="qty-btn" data-qty="2">2</button>
-          <button type="button" class="qty-btn" data-qty="3">3</button>
-        </div>
-      </div>
-
-      <div class="combo-step">
-        <span class="combo-step-label">Paso 2 · Elige tus fragancias</span>
+        <span class="combo-step-label">Elige tus fragancias</span>
         <div class="combo-grid" id="comboGrid">
 
-          <label class="combo-item" data-pid="nightout" data-name="9PM Night Out" data-price5="25000">
-            <input type="checkbox" class="combo-check" value="nightout" disabled>
+          <label class="combo-item" data-pid="nightout" data-name="9PM Night Out" data-price5="24990">
+            <input type="checkbox" class="combo-check" value="nightout">
             <span class="combo-photo"><img class="pid-img" data-pid="nightout" alt="9PM Night Out"></span>
             <span class="combo-name">9PM Night Out</span>
-            <span class="combo-price">$25.000</span>
+            <span class="combo-price">$24.990</span>
           </label>
 
-          <label class="combo-item" data-pid="hawasice" data-name="Hawas Ice" data-price5="27000">
-            <input type="checkbox" class="combo-check" value="hawasice" disabled>
+          <label class="combo-item" data-pid="hawasice" data-name="Hawas Ice" data-price5="26990">
+            <input type="checkbox" class="combo-check" value="hawasice">
             <span class="combo-photo"><img class="pid-img" data-pid="hawasice" alt="Hawas Ice"></span>
             <span class="combo-name">Hawas Ice</span>
-            <span class="combo-price">$27.000</span>
+            <span class="combo-price">$26.990</span>
           </label>
 
-          <label class="combo-item" data-pid="mandarinsky" data-name="Mandarin Sky" data-price5="25000">
-            <input type="checkbox" class="combo-check" value="mandarinsky" disabled>
+          <label class="combo-item" data-pid="mandarinsky" data-name="Mandarin Sky" data-price5="24990">
+            <input type="checkbox" class="combo-check" value="mandarinsky">
             <span class="combo-photo"><img class="pid-img" data-pid="mandarinsky" alt="Mandarin Sky"></span>
             <span class="combo-name">Mandarin Sky</span>
-            <span class="combo-price">$25.000</span>
+            <span class="combo-price">$24.990</span>
           </label>
 
-          <label class="combo-item" data-pid="hawasmalibu" data-name="Hawas Malibu" data-price5="25000">
-            <input type="checkbox" class="combo-check" value="hawasmalibu" disabled>
+          <label class="combo-item" data-pid="hawasmalibu" data-name="Hawas Malibu" data-price5="24990">
+            <input type="checkbox" class="combo-check" value="hawasmalibu">
             <span class="combo-photo"><img class="pid-img" data-pid="hawasmalibu" alt="Hawas Malibu"></span>
             <span class="combo-name">Hawas Malibu</span>
-            <span class="combo-price">$25.000</span>
+            <span class="combo-price">$24.990</span>
           </label>
 
-          <label class="combo-item" data-pid="rebel" data-name="9PM Rebel" data-price5="25000">
-            <input type="checkbox" class="combo-check" value="rebel" disabled>
+          <label class="combo-item" data-pid="rebel" data-name="9PM Rebel" data-price5="24990">
+            <input type="checkbox" class="combo-check" value="rebel">
             <span class="combo-photo"><img class="pid-img" data-pid="rebel" alt="9PM Rebel"></span>
             <span class="combo-name">9PM Rebel</span>
-            <span class="combo-price">$25.000</span>
+            <span class="combo-price">$24.990</span>
           </label>
 
-          <label class="combo-item" data-pid="khamrahqahwa" data-name="Khamrah Qahwa" data-price5="25000">
-            <input type="checkbox" class="combo-check" value="khamrahqahwa" disabled>
+          <label class="combo-item" data-pid="khamrahqahwa" data-name="Khamrah Qahwa" data-price5="24990">
+            <input type="checkbox" class="combo-check" value="khamrahqahwa">
             <span class="combo-photo"><img class="pid-img" data-pid="khamrahqahwa" alt="Khamrah Qahwa"></span>
             <span class="combo-name">Khamrah Qahwa</span>
-            <span class="combo-price">$25.000</span>
+            <span class="combo-price">$24.990</span>
           </label>
 
-          <label class="combo-item" data-pid="badeoudhonor" data-name="Bade'e Al Oud Honor & Glory" data-price5="25000">
-            <input type="checkbox" class="combo-check" value="badeoudhonor" disabled>
+          <label class="combo-item" data-pid="badeoudhonor" data-name="Bade'e Al Oud Honor & Glory" data-price5="24990">
+            <input type="checkbox" class="combo-check" value="badeoudhonor">
             <span class="combo-photo"><img class="pid-img" data-pid="badeoudhonor" alt="Bade'e Al Oud Honor &amp; Glory"></span>
             <span class="combo-name">Bade'e Al Oud Honor &amp; Glory</span>
-            <span class="combo-price">$25.000</span>
+            <span class="combo-price">$24.990</span>
           </label>
 
-          <label class="combo-item" data-pid="badeoudamethyst" data-name="Bade'e Al Oud Amethyst" data-price5="25000">
-            <input type="checkbox" class="combo-check" value="badeoudamethyst" disabled>
+          <label class="combo-item" data-pid="badeoudamethyst" data-name="Bade'e Al Oud Amethyst" data-price5="24990">
+            <input type="checkbox" class="combo-check" value="badeoudamethyst">
             <span class="combo-photo"><img class="pid-img" data-pid="badeoudamethyst" alt="Bade'e Al Oud Amethyst"></span>
             <span class="combo-name">Bade'e Al Oud Amethyst</span>
-            <span class="combo-price">$25.000</span>
+            <span class="combo-price">$24.990</span>
           </label>
 
-          <label class="combo-item" data-pid="clubdenuit" data-name="Club De Nuit Intense EDT" data-price5="25000">
-            <input type="checkbox" class="combo-check" value="clubdenuit" disabled>
+          <label class="combo-item" data-pid="clubdenuit" data-name="Club De Nuit Intense EDT" data-price5="24990">
+            <input type="checkbox" class="combo-check" value="clubdenuit">
             <span class="combo-photo"><img class="pid-img" data-pid="clubdenuit" alt="Club De Nuit Intense EDT"></span>
             <span class="combo-name">Club De Nuit Intense EDT</span>
-            <span class="combo-price">$25.000</span>
+            <span class="combo-price">$24.990</span>
           </label>
 
         </div>
@@ -1199,6 +1200,7 @@
     </div>
   </div>
 </div>
+
 
 <script>
   const nav = document.getElementById('nav');
@@ -1443,37 +1445,16 @@
   const comboModal = document.getElementById('comboModal');
   const comboOpenBtn = document.getElementById('comboOpenBtn');
   const comboModalClose = document.getElementById('comboModalClose');
-  const comboQtyBtns = document.querySelectorAll('.qty-btn');
   const comboChecks = document.querySelectorAll('.combo-check');
   const comboTotalEl = document.getElementById('comboTotal');
   const comboBuy = document.getElementById('comboBuy');
-  let comboMaxQty = 0;
 
   function resetCombo(){
-    comboMaxQty = 0;
-    comboQtyBtns.forEach(b => b.classList.remove('active'));
-    comboChecks.forEach(c => {
-      c.checked = false;
-      c.disabled = true;
-      c.closest('.combo-item').classList.remove('disabled');
-    });
+    comboChecks.forEach(c => { c.checked = false; });
     comboTotalEl.textContent = '$0';
     comboBuy.classList.add('disabled');
     comboBuy.setAttribute('aria-disabled', 'true');
     comboBuy.href = '#';
-  }
-
-  function updateComboEnablement(checkedCount){
-    comboChecks.forEach(c => {
-      const item = c.closest('.combo-item');
-      if(!c.checked && checkedCount >= comboMaxQty){
-        c.disabled = true;
-        item.classList.add('disabled');
-      } else {
-        c.disabled = false;
-        item.classList.remove('disabled');
-      }
-    });
   }
 
   function updateComboTotal(){
@@ -1481,14 +1462,13 @@
     const sum = checked.reduce((acc,c) => acc + Number(c.closest('.combo-item').dataset.price5), 0);
     let total = sum;
     let discountApplied = false;
-    if(comboMaxQty === 3 && checked.length === 3){
+    if(checked.length >= 3){
       total = Math.round(sum * 0.85);
       discountApplied = true;
     }
     comboTotalEl.textContent = fmt(total);
-    updateComboEnablement(checked.length);
 
-    const ready = comboMaxQty > 0 && checked.length === comboMaxQty;
+    const ready = checked.length > 0;
     comboBuy.classList.toggle('disabled', !ready);
     comboBuy.setAttribute('aria-disabled', ready ? 'false' : 'true');
 
@@ -1502,14 +1482,6 @@
     }
   }
 
-  comboQtyBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      comboMaxQty = Number(btn.dataset.qty);
-      comboQtyBtns.forEach(b => b.classList.toggle('active', b === btn));
-      comboChecks.forEach(c => { c.checked = false; c.closest('.combo-item').classList.remove('disabled'); });
-      updateComboTotal();
-    });
-  });
   comboChecks.forEach(c => c.addEventListener('change', updateComboTotal));
 
   function openComboModal(){
