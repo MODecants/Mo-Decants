@@ -413,13 +413,57 @@
   }
   .fullbottle-cta{
     text-align:center;
-    border-top:1px solid var(--line);
+    border:1px solid var(--gold-deep);
+    background:radial-gradient(circle at 50% 28%, rgba(201,164,76,.16), transparent 72%);
     margin-top:3.4rem;
-    padding-top:3.4rem;
+    padding:3.4rem 2rem;
   }
+  .fullbottle-cta .eyebrow{display:block;margin-bottom:.9rem;}
   .fullbottle-cta p{
     color:var(--ivory-dim);font-size:1rem;line-height:1.75;max-width:520px;
     margin:0 auto 1.5rem;
+  }
+  .combo-cta{
+    text-align:center;
+    border:1px solid var(--gold-deep);
+    background:radial-gradient(circle at 50% 28%, rgba(201,164,76,.16), transparent 72%);
+    margin-top:3.4rem;
+    padding:3.4rem 2rem;
+  }
+  .combo-cta .eyebrow{display:block;margin-bottom:.9rem;}
+  .combo-cta p{
+    color:var(--ivory-dim);font-size:1rem;line-height:1.75;max-width:520px;
+    margin:0 auto 1.6rem;
+  }
+  .combo-modal-card{grid-template-columns:1fr;max-width:640px;}
+  .combo-hint{color:var(--ivory-dim);font-size:.85rem;line-height:1.6;margin-bottom:1.3rem;}
+  .combo-list{
+    max-height:440px;overflow-y:auto;margin-bottom:1.4rem;
+    display:grid;grid-template-columns:repeat(3, 1fr);gap:1rem;
+  }
+  .combo-check{
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+    border:1px solid var(--line);
+    padding:1rem .6rem .85rem;
+    cursor:pointer;
+    transition:border-color .3s, background .3s;
+  }
+  .combo-check-input{position:absolute;width:0;height:0;opacity:0;pointer-events:none;}
+  .combo-check-img{
+    width:100%;aspect-ratio:1;object-fit:contain;background:#0d0c09;
+    border-radius:50%;border:1px solid var(--gold-deep);
+    transition:border-color .3s, box-shadow .3s;
+    margin-bottom:.7rem;
+  }
+  .combo-check:has(input:checked) .combo-check-img{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(201,164,76,.22);
+  }
+  .combo-check-name{font-size:.72rem;letter-spacing:.02em;color:var(--ivory);line-height:1.3;margin-bottom:.3rem;}
+  .combo-check-pr{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-light);font-size:1rem;}
+  .combo-check:has(input:checked){border-color:var(--gold);background:#100f0a;}
+  @media (max-width:520px){
+    .combo-list{grid-template-columns:repeat(2, 1fr);}
   }
   .modal-overlay{
     position:fixed;inset:0;z-index:100;
@@ -520,7 +564,7 @@
   .trust-item h4{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--ivory);margin-bottom:.4rem;}
   .trust-item p{font-size:.82rem;color:var(--ivory-dim);line-height:1.6;}
   .testi-wrap{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:2.4rem;
   }
   .testi{
     padding:2.6rem 2.2rem;
@@ -716,8 +760,8 @@
         <span class="eyebrow">¿Qué es un decant?</span>
         <p>Es una porción de tu perfume favorito, fraccionada a mano desde el frasco original en un atomizador de vidrio sellado — la misma fragancia de casa, en la medida justa para probarla o llevarla contigo.</p>
         <div class="decant-stats">
-          <div class="decant-stat"><b>5ml</b><span>≈ 60–70 aplicaciones</span></div>
-          <div class="decant-stat"><b>10ml</b><span>≈ 120–140 aplicaciones</span></div>
+          <div class="decant-stat"><b>5ml</b><span>≈ 80–70 aplicaciones</span></div>
+          <div class="decant-stat"><b>10ml</b><span>≈ 160–140 aplicaciones</span></div>
         </div>
       </div>
     </div>
@@ -753,7 +797,7 @@
           </div>
         </div>
 
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Mandarin Sky" data-pid="mandarinsky" data-price5="25000" data-price10="40000">
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Mandarin Sky" data-pid="mandarinsky" data-price5="25000" data-price10="42000">
           <div class="prod-photo"><img class="pid-img" data-pid="mandarinsky" alt="Mandarin Sky"></div>
           <div class="prod-info">
             <h3>Mandarin Sky</h3>
@@ -762,7 +806,7 @@
           </div>
         </div>
 
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Hawas Malibu" data-pid="hawasmalibu" data-price5="25000" data-price10="43000">
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Hawas Malibu" data-pid="hawasmalibu" data-price5="25000" data-price10="44000">
           <div class="prod-photo"><img class="pid-img" data-pid="hawasmalibu" alt="Hawas Malibu"></div>
           <div class="prod-info">
             <h3>Hawas Malibu</h3>
@@ -771,7 +815,7 @@
           </div>
         </div>
 
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="9PM Rebel" data-pid="rebel" data-price5="25000" data-price10="40000">
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="9PM Rebel" data-pid="rebel" data-price5="25000" data-price10="42000">
           <div class="prod-photo"><img class="pid-img" data-pid="rebel" alt="9PM Rebel"></div>
           <div class="prod-info">
             <h3>9PM Rebel</h3>
@@ -822,9 +866,20 @@
 
   <section>
     <div class="container">
+      <div class="combo-cta reveal">
+        <span class="eyebrow">15% off en 3 o más fragancias</span>
+        <p>Combina las fragancias que quieras en 5ml y arma tu pedido a tu medida — mientras más elijas, más ahorras.</p>
+        <button type="button" class="btn-primary" id="comboOpenBtn">Arma tu combo</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
       <div class="fullbottle-cta reveal">
+        <span class="eyebrow">¿No la tenemos en decant?</span>
         <p>Si una decantación para ti no es suficiente, contáctanos para solicitar el perfume completo que quieras obtener.</p>
-        <a href="https://wa.me/573178143757?text=Hola%2C%20quiero%20informacion%20sobre%20comprar%20el%20frasco%20completo%20de%20una%20fragancia." target="_blank" class="btn-ghost">Escribir por WhatsApp</a>
+        <a href="https://wa.me/573178143757?text=Hola%2C%20quiero%20informacion%20sobre%20comprar%20el%20frasco%20completo%20de%20una%20fragancia." target="_blank" class="btn-primary">Escribir por WhatsApp</a>
       </div>
     </div>
   </section>
@@ -842,8 +897,8 @@
       <div class="decant-info reveal" style="margin:0 auto;">
         <p>Un decant es una porción de un perfume 100% original, fraccionada a mano desde el frasco de casa —nunca de mezclas, imitaciones ni recargas— y envasada en un atomizador de vidrio sellado. Es la misma fragancia que encuentras en el frasco grande, en el tamaño justo para probarla, llevarla contigo o regalarla sin pagar el precio de un frasco completo.</p>
         <div class="decant-stats">
-          <div class="decant-stat"><b>5ml</b><span>≈ 60–70 aplicaciones</span></div>
-          <div class="decant-stat"><b>10ml</b><span>≈ 120–140 aplicaciones</span></div>
+          <div class="decant-stat"><b>5ml</b><span>≈ 80–70 aplicaciones</span></div>
+          <div class="decant-stat"><b>10ml</b><span>≈ 160–140 aplicaciones</span></div>
         </div>
       </div>
       <div class="decant-divider reveal" style="margin-top:3.6rem;"></div>
@@ -936,23 +991,18 @@
       <div class="section-head reveal">
         <span class="eyebrow">Quienes ya decantan</span>
         <h2>No lo decimos nosotros</h2>
-        <p>Ejemplos de reseña — reemplázalos por comentarios reales de tus clientes.</p>
+        <p>Comentarios reales de quienes ya probaron sus fragancias con nosotros.</p>
       </div>
       <div class="testi-wrap reveal">
         <div class="testi">
           <div class="stars">★★★★★</div>
-          <p>"Pedí el Hawas Ice sin creer del todo que fuera original. Llegó sellado, con el lote, y olía exactamente como el frasco de la tienda."</p>
-          <div class="who">— Valentina R.</div>
+          <p>"Me compré dos decants, uno de 9PM Night Out y uno de Club de Nuit, y lo que duran estos perfumes es otra cosa."</p>
+          <div class="who">— David. L</div>
         </div>
         <div class="testi">
           <div class="stars">★★★★★</div>
-          <p>"La presentación se siente de marca grande, no de reventa. El empaque solo ya vale la pena."</p>
-          <div class="who">— Camilo A.</div>
-        </div>
-        <div class="testi">
-          <div class="stars">★★★★★</div>
-          <p>"Probé el 9PM Night Out en 5ml antes de decidirme por el frasco completo. Me ahorró una compra que no me hubiera gustado."</p>
-          <div class="who">— Daniela M.</div>
+          <p>"Buena cajita, me encantó."</p>
+          <div class="who">— Daniel. D</div>
         </div>
       </div>
     </div>
@@ -1029,6 +1079,21 @@
       <div class="size-select" id="modalSizes"></div>
       <div class="modal-total">Total: <b id="modalTotal">$0</b></div>
       <a href="#" target="_blank" class="btn-primary" id="modalBuy" style="text-align:center;">Pedir por WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= MODAL: arma tu combo ======================= -->
+<div class="modal-overlay" id="comboModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card combo-modal-card">
+    <button class="modal-close" id="comboModalClose" aria-label="Cerrar">&times;</button>
+    <div class="modal-body">
+      <span class="eyebrow">Arma tu combo</span>
+      <h3>Elige tus fragancias</h3>
+      <p class="combo-hint">Selecciona las que quieras en 5ml — con 3 o más fragancias obtienes 15% de descuento sobre el total.</p>
+      <div class="combo-list" id="comboList"></div>
+      <div class="modal-total">Total: <b id="comboTotal">$0</b></div>
+      <a href="#" target="_blank" class="btn-primary disabled" id="comboBuy" style="text-align:center;">Pedir por WhatsApp</a>
     </div>
   </div>
 </div>
@@ -1271,6 +1336,62 @@
   modalClose.addEventListener('click', closeProductModal);
   modal.addEventListener('click', e => { if(e.target === modal) closeProductModal(); });
   window.addEventListener('keydown', e => { if(e.key === 'Escape') closeProductModal(); });
+
+  /* ---------- combo modal ---------- */
+  const comboModal = document.getElementById('comboModal');
+  const comboOpenBtn = document.getElementById('comboOpenBtn');
+  const comboModalClose = document.getElementById('comboModalClose');
+  const comboList = document.getElementById('comboList');
+  const comboTotal = document.getElementById('comboTotal');
+  const comboBuy = document.getElementById('comboBuy');
+
+  function buildComboList(){
+    comboList.innerHTML = '';
+    document.querySelectorAll('.prod-card').forEach(card => {
+      const name = card.dataset.name;
+      const pid = card.dataset.pid;
+      const price5 = card.dataset.price5;
+      if(!price5) return;
+      const img = PRODUCT_IMAGES[pid] || '';
+      const row = document.createElement('label');
+      row.className = 'combo-check';
+      row.innerHTML = `<img class="combo-check-img" src="${img}" alt=""><span class="combo-check-name">${name}</span><span class="combo-check-pr">${fmt(price5)}</span><input type="checkbox" class="combo-check-input" value="${price5}" data-name="${name}">`;
+      comboList.appendChild(row);
+    });
+  }
+
+  function updateComboTotal(){
+    const checked = Array.from(comboList.querySelectorAll('input[type="checkbox"]:checked'));
+    const total = checked.reduce((sum, inp) => sum + Number(inp.value), 0);
+    const discount = checked.length >= 3;
+    const finalTotal = discount ? Math.round(total * 0.85) : total;
+    comboTotal.textContent = fmt(finalTotal) + (discount ? ' · 15% off aplicado' : '');
+    if(checked.length > 0){
+      comboBuy.classList.remove('disabled');
+      const names = checked.map(inp => inp.dataset.name).join(', ');
+      const msg = encodeURIComponent(`Hola, quiero armar un combo en 5ml con: ${names}. Total: ${fmt(finalTotal)}.`);
+      comboBuy.href = `https://wa.me/${WA_NUMBER}?text=${msg}`;
+    } else {
+      comboBuy.classList.add('disabled');
+      comboBuy.removeAttribute('href');
+    }
+  }
+
+  function openComboModal(){
+    buildComboList();
+    comboList.querySelectorAll('input[type="checkbox"]').forEach(inp => inp.addEventListener('change', updateComboTotal));
+    updateComboTotal();
+    comboModal.classList.add('open');
+    comboModal.setAttribute('aria-hidden', 'false');
+  }
+  function closeComboModal(){
+    comboModal.classList.remove('open');
+    comboModal.setAttribute('aria-hidden', 'true');
+  }
+  comboOpenBtn.addEventListener('click', openComboModal);
+  comboModalClose.addEventListener('click', closeComboModal);
+  comboModal.addEventListener('click', e => { if(e.target === comboModal) closeComboModal(); });
+  window.addEventListener('keydown', e => { if(e.key === 'Escape') closeComboModal(); });
 </script>
 </body>
 </html>
