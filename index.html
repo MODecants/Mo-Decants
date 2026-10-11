@@ -678,15 +678,149 @@
     .trust{grid-template-columns:1fr;}
     .trust-item{border-right:none;}
     .footer-top{grid-template-columns:1fr;}
-    .products-grid{grid-template-columns:repeat(3,1fr);gap:.55rem;}
-    .prod-info{padding:.6rem .55rem .75rem;}
-    .prod-info h3{font-size:.72rem;margin-bottom:.25rem;line-height:1.2;}
-    .prod-price{font-size:.78rem;}
-    .prod-hint{font-size:.52rem;letter-spacing:.08em;margin-top:.3rem;}
+    .products-grid{grid-template-columns:repeat(2,1fr);gap:.8rem;}
   }
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
   }
+
+  /* ---------- contador hero ---------- */
+  .hero-counter{margin-top:2.6rem;display:flex;flex-direction:column;align-items:center;gap:.35rem;opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+  .hero-counter.show{opacity:1;transform:none;}
+  .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  @media(max-width:560px){.hero-btns{flex-direction:column;align-items:center;}}
+  .hero-counter-num{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,6vw,3.6rem);color:var(--gold-light);line-height:1;letter-spacing:.02em;font-variant-numeric:tabular-nums;}
+  .hero-counter-label{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ivory-dim);}
+  .hero-counter::before{content:'';width:46px;height:1px;background:var(--gold-deep);margin-bottom:.9rem;}
+
+  /* ---------- test olfativo ---------- */
+  .quiz-box{max-width:860px;margin:0 auto;}
+  .quiz-progress{display:flex;gap:.6rem;justify-content:center;align-items:center;margin-bottom:2.2rem;}
+  .quiz-dot{width:38px;height:2px;background:var(--line);transition:background .4s var(--ease);}
+  .quiz-dot.on{background:var(--gold);}
+  .quiz-count{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-align:center;display:block;margin-bottom:.9rem;}
+  .quiz-q{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.6vw,2.3rem);text-align:center;color:var(--ivory);margin-bottom:.7rem;}
+  .quiz-hint{text-align:center;color:var(--ivory-dim);font-size:.92rem;margin-bottom:2.2rem;}
+  .quiz-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+  .quiz-opt{background:var(--black);border:1px solid var(--line);padding:1.8rem 1.1rem;text-align:center;cursor:pointer;color:var(--ivory);font-family:'Jost',sans-serif;transition:border-color .35s var(--ease), transform .35s var(--ease), background .35s var(--ease);}
+  .quiz-opt:hover,.quiz-opt:focus-visible{border-color:var(--gold);transform:translateY(-3px);background:rgba(201,164,76,.05);}
+  .quiz-opt.picked{border-color:var(--gold);background:rgba(201,164,76,.1);}
+  .quiz-opt .qo-ico{font-size:1.7rem;display:block;margin-bottom:.8rem;color:var(--gold);}
+  .quiz-opt h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--gold-light);margin-bottom:.45rem;}
+  .quiz-opt p{font-size:.8rem;color:var(--ivory-dim);line-height:1.55;}
+  .quiz-back{display:block;margin:1.8rem auto 0;background:none;border:none;color:var(--ivory-dim);font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;cursor:pointer;}
+  .quiz-back:hover{color:var(--gold-light);}
+  .quiz-results{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2rem;}
+  .quiz-rank{display:block;text-align:center;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);padding:.55rem 0;border:1px solid var(--line);border-bottom:none;background:var(--black);}
+  .quiz-result-item .prod-card{border-top-left-radius:0;}
+  .quiz-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.4rem;}
+  .quiz-teaser{text-align:center;max-width:620px;margin:0 auto;padding:3rem 1.6rem;border:1px solid var(--gold-deep);background:radial-gradient(circle at 50% 0%, rgba(201,164,76,.1), transparent 70%), var(--black-deep);}
+  .quiz-teaser .eyebrow{display:block;margin-bottom:.9rem;}
+  .quiz-teaser h2{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--ivory);margin-bottom:.8rem;}
+  .quiz-teaser p{color:var(--ivory-dim);font-size:.95rem;line-height:1.7;margin-bottom:1.6rem;}
+  @media(max-width:700px){
+    .quiz-opts{grid-template-columns:1fr;}
+    .quiz-opt{padding:1.3rem 1rem;}
+    .quiz-results{gap:.55rem;}
+  }
+
+  /* ---------- catálogo elegante: toolbar ---------- */
+  #page-coleccion .container{max-width:1380px;}
+  .cat-bar{border-bottom:1px solid var(--line);padding-bottom:1.6rem;margin-bottom:2.4rem;}
+  .cat-row1{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.3rem;}
+  .cat-search{position:relative;flex:1 1 320px;max-width:540px;}
+  .cat-search svg{position:absolute;left:1.15rem;top:50%;transform:translateY(-50%);width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.6;pointer-events:none;}
+  .cat-search input{width:100%;background:rgba(243,237,224,.03);border:1px solid var(--line);border-radius:999px;padding:.95rem 1.2rem .95rem 3rem;color:var(--ivory);font-family:'Jost',sans-serif;font-size:.92rem;font-weight:300;transition:border-color .3s var(--ease), background .3s var(--ease);}
+  .cat-search input::placeholder{color:var(--ivory-dim);opacity:.8;}
+  .cat-search input:focus{outline:none;border-color:var(--gold);background:rgba(201,164,76,.05);}
+  .cat-right{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;}
+  .cat-count{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ivory-dim);margin:0;}
+  .cat-count b{color:var(--gold);font-weight:500;}
+  .cat-sort select{appearance:none;-webkit-appearance:none;background:rgba(243,237,224,.03) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23c9a44c' stroke-width='1.6'/></svg>") no-repeat right 1.1rem center;color:var(--ivory);border:1px solid var(--line);border-radius:12px;font-family:'Jost',sans-serif;font-size:.85rem;padding:.8rem 2.6rem .8rem 1.2rem;cursor:pointer;}
+  .cat-sort select:focus-visible{outline:1px solid var(--gold);}
+  .cat-sort select option{background:var(--black);}
+  .cat-chips{display:flex;gap:.7rem;flex-wrap:wrap;}
+  .cat-chip{background:rgba(243,237,224,.03);border:1px solid var(--line);color:var(--ivory-dim);border-radius:999px;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;padding:.8rem 1.4rem;cursor:pointer;white-space:nowrap;transition:all .3s var(--ease);}
+  .cat-chip:hover{border-color:var(--gold-deep);color:var(--gold-light);transform:translateY(-1px);}
+  .cat-chip .cc-n{opacity:.6;margin-left:.3rem;}
+  .cat-chip.on{border-color:var(--gold-light);color:var(--black-deep);font-weight:500;background:linear-gradient(135deg,var(--gold-light),var(--gold) 65%,var(--gold-deep));box-shadow:0 8px 24px -8px rgba(201,164,76,.6);}
+  .cat-empty{display:none;text-align:center;color:var(--ivory-dim);padding:3rem 0;}
+
+  /* ---------- catálogo elegante: tarjetas ---------- */
+  #page-coleccion .products-grid{grid-template-columns:repeat(4,1fr);gap:1.6rem;}
+  #page-coleccion .prod-card,.quiz-result-item .prod-card{border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#0d0c09,#080807);border:1px solid var(--line);box-shadow:0 18px 40px -28px rgba(0,0,0,.9);}
+  #page-coleccion .prod-card:hover,.quiz-result-item .prod-card:hover{border-color:var(--gold-deep);box-shadow:0 26px 50px -26px rgba(201,164,76,.35);}
+  #page-coleccion .prod-photo,.quiz-result-item .prod-photo{aspect-ratio:1/1.05;background:radial-gradient(circle at 50% 42%, rgba(201,164,76,.12), transparent 62%), linear-gradient(160deg,#100f0a,#050504);}
+  .prod-photo img.is-box{width:100%;height:100%;object-fit:contain;filter:none;}
+  .pc-badges{position:absolute;top:.9rem;left:.9rem;z-index:3;display:flex;flex-direction:column;align-items:flex-start;gap:.45rem;}
+  .pc-badge{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:.5rem 1rem;border-radius:999px;}
+  .pc-badge.gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--black-deep);box-shadow:0 6px 18px -8px rgba(201,164,76,.7);}
+  .pc-badge.ghost{background:rgba(10,10,8,.7);border:1px solid var(--gold-deep);color:var(--ivory-dim);backdrop-filter:blur(4px);}
+  .pc-toggle{position:absolute;right:.9rem;bottom:.9rem;z-index:3;display:flex;background:rgba(10,10,8,.78);border:1px solid var(--line);border-radius:999px;padding:3px;backdrop-filter:blur(4px);}
+  .pc-toggle button{background:none;border:none;color:var(--ivory-dim);font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.06em;padding:.4rem .85rem;border-radius:999px;cursor:pointer;transition:all .25s var(--ease);}
+  .pc-toggle button.on{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--black-deep);font-weight:500;}
+  #page-coleccion .prod-info,.quiz-result-item .prod-info{padding:1.4rem 1.5rem 1.6rem;}
+  .pc-brand{display:block;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem;}
+  #page-coleccion .prod-info h3,.quiz-result-item .prod-info h3{font-size:1.7rem;line-height:1.15;margin-bottom:.5rem;}
+  .pc-sub{display:block;font-size:.88rem;color:var(--ivory-dim);margin-bottom:.95rem;}
+  .pc-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.1rem;}
+  .pc-tags span{font-size:.72rem;color:var(--ivory-dim);border:1px solid var(--line);border-radius:999px;padding:.3rem .8rem;background:rgba(243,237,224,.02);}
+  .pc-foot{display:flex;align-items:baseline;justify-content:space-between;gap:.8rem;border-top:1px solid var(--line);padding-top:.9rem;}
+  .pc-foot .prod-price{font-size:1.25rem;}
+  .pc-foot .prod-hint{margin-top:0;font-size:.6rem;text-align:right;}
+  @media(max-width:700px){
+    .cat-row1{flex-direction:column;align-items:stretch;}
+    .cat-search{max-width:none;flex:none;}
+    .cat-right{justify-content:space-between;}
+    .cat-chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:.4rem;scrollbar-width:none;margin:0 -6vw;padding-left:6vw;padding-right:6vw;}
+    .cat-chips::-webkit-scrollbar{display:none;}
+    .cat-chip{padding:.65rem 1.05rem;font-size:.66rem;}
+  }
+  .pc-sizes{display:flex;gap:.45rem;margin-bottom:1.1rem;}
+  .pc-size{flex:1;background:rgba(243,237,224,.03);border:1px solid var(--line);color:var(--ivory-dim);border-radius:8px;font-family:'Jost',sans-serif;font-size:.82rem;padding:.7rem 0;cursor:pointer;transition:all .25s var(--ease);}
+  .pc-size:disabled{opacity:.3;cursor:default;}
+  .pc-size:not(:disabled):hover{border-color:var(--gold-deep);color:var(--gold-light);}
+  .pc-size.on{border-color:var(--gold);color:var(--gold-light);background:rgba(201,164,76,.1);}
+  .pc-price{display:block;font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold-light);line-height:1.1;}
+  .pc-cap{display:block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory-dim);margin:.25rem 0 1.1rem;}
+  .pc-actions{display:flex;gap:.6rem;}
+  .pc-notes{flex:1;background:transparent;border:1px solid var(--gold-deep);color:var(--ivory);border-radius:8px;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;padding:.85rem 0;cursor:pointer;transition:all .25s var(--ease);}
+  .pc-notes:hover{border-color:var(--gold);color:var(--gold-light);}
+  .pc-bag{width:48px;flex:none;border:none;border-radius:8px;background:linear-gradient(135deg,var(--gold-light),var(--gold));display:grid;place-items:center;cursor:pointer;transition:transform .25s var(--ease);}
+  .pc-bag:hover{transform:translateY(-2px);}
+  .pc-bag svg{width:20px;height:20px;stroke:var(--black-deep);fill:none;stroke-width:1.7;}
+  @media(max-width:1080px){ #page-coleccion .products-grid{grid-template-columns:repeat(3,1fr);} }
+  @media(max-width:700px){
+    #page-coleccion .products-grid{grid-template-columns:repeat(2,1fr);gap:.8rem;}
+    #page-coleccion .prod-card{border-radius:12px;}
+    #page-coleccion .prod-photo{aspect-ratio:1/1.12;}
+    .pc-badges{top:.55rem;left:.55rem;gap:.3rem;}
+    .pc-badge{font-size:.5rem;padding:.32rem .65rem;letter-spacing:.12em;}
+    .pc-toggle{right:.5rem;bottom:.5rem;}
+    .pc-toggle button{font-size:.6rem;padding:.3rem .6rem;}
+    #page-coleccion .prod-info{padding:1rem .85rem 1.05rem;}
+    .pc-brand{font-size:.58rem;letter-spacing:.2em;}
+    #page-coleccion .prod-info h3{font-size:1.2rem;margin-bottom:.35rem;}
+    .pc-sub{font-size:.76rem;margin-bottom:.8rem;line-height:1.4;}
+    .pc-tags{display:none;}
+    .pc-sizes{gap:.3rem;margin-bottom:.85rem;}
+    .pc-size{font-size:.68rem;padding:.55rem 0;border-radius:6px;}
+    .pc-price{font-size:1.25rem;}
+    .pc-cap{font-size:.55rem;margin-bottom:.85rem;}
+    .pc-notes{font-size:.6rem;letter-spacing:.14em;padding:.7rem 0;}
+    .pc-bag{width:40px;}
+  }
+
+  /* ---------- slogan + flechas ---------- */
+  .pc-badge.mood{background:rgba(201,164,76,.14);border:1px solid var(--gold);color:var(--gold-light);backdrop-filter:blur(4px);}
+  .pc-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold-deep);background:rgba(10,10,8,.72);backdrop-filter:blur(4px);display:grid;place-items:center;cursor:pointer;opacity:.85;transition:all .25s var(--ease);padding:0;}
+  .pc-arrow svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .pc-arrow:hover{background:linear-gradient(135deg,var(--gold-light),var(--gold));border-color:var(--gold);opacity:1;}
+  .pc-arrow:hover svg{stroke:var(--black-deep);}
+  .pc-arrow.prev{left:.6rem;} .pc-arrow.next{right:.6rem;}
+  @media(max-width:700px){ .pc-arrow{width:28px;height:28px;} .pc-arrow svg{width:13px;height:13px;} .pc-arrow.prev{left:.35rem;} .pc-arrow.next{right:.35rem;} }
+  .cat-test-cta{text-align:center;margin:3.2rem auto 0;padding:2.4rem 1.4rem;border-top:1px solid var(--line);max-width:640px;}
+  .cat-test-cta p{color:var(--ivory-dim);font-size:.95rem;margin:.9rem 0 1.6rem;line-height:1.6;}
 </style>
 </head>
 <body>
@@ -700,6 +834,7 @@
   <div class="nav-links" id="navLinks">
     <a href="#/coleccion" data-route="coleccion">Colección</a>
     <a href="#/decant" data-route="decant">¿Qué es un decant?</a>
+    <a href="#/test" data-route="test">Test olfativo</a>
     <a href="#/proceso" data-route="proceso">Cómo funcionamos</a>
     <a href="#/confianza" data-route="confianza">Autenticidad</a>
     <a href="#/contacto" data-route="contacto">Contacto</a>
@@ -720,8 +855,8 @@
     <span class="eyebrow hero-eyebrow">Perfumería de autor, decantada con precisión</span>
     <h1>El lujo no se mide<br>en frascos. <em>Se mide en gotas.</em></h1>
     <p class="sub">M&amp;O Decants te acerca a fragancias de nicho y de autor, fraccionadas con cuidado artesanal, selladas y garantizadas al 100% originales.</p>
-    <a href="#/coleccion" class="btn-primary hero-cta" data-route="coleccion">Explorar catálogo completo</a>
-    
+    <div class="hero-cta hero-btns"><a href="#/coleccion" class="btn-primary" data-route="coleccion">Explorar catálogo completo</a><a href="#/test" class="btn-ghost" data-route="test">Test: encuentra tu aroma</a></div>
+    <div class="hero-counter"><span class="hero-counter-num" id="heroCounter" data-target="500">+0</span><span class="hero-counter-label">decants entregados</span></div>
   </header>
 
   <div class="marquee-band">
@@ -760,6 +895,13 @@
         <p style="margin-top:1.2rem;margin-bottom:0;font-size:.8rem;letter-spacing:.05em;color:var(--gold-light);">Ofrecemos entrega y atención personalizada en cada pedido.</p>
       </div>
       <div class="decant-divider reveal"></div>
+      <div class="quiz-teaser reveal">
+        <span class="eyebrow">Test olfativo</span>
+        <h2>¿No sabes cuál elegir?</h2>
+        <p>Responde 3 preguntas rápidas y te recomendamos las 3 fragancias que mejor van con tu estilo, tu clima y tu estela.</p>
+        <a href="#/test" class="btn-primary" data-route="test">Encontrar mi aroma</a>
+      </div>
+      <div class="decant-divider reveal" style="margin-top:3.6rem;"></div>
       <div class="decant-info reveal">
         <span class="eyebrow">¿Qué es un decant?</span>
         <p>Es una porción de tu perfume favorito, fraccionada a mano desde el frasco original en un atomizador de vidrio sellado — la misma fragancia de casa, en la medida justa para probarla o llevarla contigo.</p>
@@ -781,6 +923,24 @@
   </div>
   <section class="first-in-page">
     <div class="container">
+      <div class="cat-bar reveal">
+        <div class="cat-row1">
+          <label class="cat-search">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <input type="search" id="catSearch" placeholder="Buscar por perfume, nota (ej. canela, vainilla) o marca..." autocomplete="off">
+          </label>
+          <div class="cat-right">
+            <p class="cat-count" id="catCount"></p>
+            <label class="cat-sort"><select id="catSort" aria-label="Ordenar">
+              <option value="pop">Más populares</option>
+              <option value="asc">Precio: menor a mayor</option>
+              <option value="desc">Precio: mayor a menor</option>
+              <option value="name">Nombre: A a la Z</option>
+            </select></label>
+          </div>
+        </div>
+        <div class="cat-chips" id="catChips"></div>
+      </div>
       <div class="products-grid reveal">
 
         <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="9PM Night Out" data-pid="nightout" data-price5="25000" data-price10="45000">
@@ -828,21 +988,21 @@
           </div>
         </div>
 
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="9PM Rebel" data-pid="rebel" data-price5="25000" data-price10="45000">
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="9PM Rebel" data-pid="rebel" data-ask="1">
           <div class="prod-photo"><img class="pid-img" data-pid="rebel" alt="9PM Rebel"></div>
           <div class="prod-info">
             <h3>9PM Rebel</h3>
-            <span class="prod-price">Desde $25.000</span>
-            <span class="prod-hint">5ml y 10ml disponibles</span>
+            <span class="prod-price">Consultar precio</span>
+            <span class="prod-hint">Solo frasco completo (100ml)</span>
           </div>
         </div>
 
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Bade'e Al Oud Honor & Glory" data-pid="badeoudhonor" data-price5="25000">
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Bade'e Al Oud Honor & Glory" data-pid="badeoudhonor" data-ask="1">
           <div class="prod-photo"><img class="pid-img" data-pid="badeoudhonor" alt="Bade'e Al Oud Honor &amp; Glory"></div>
           <div class="prod-info">
             <h3>Bade'e Al Oud Honor &amp; Glory</h3>
-            <span class="prod-price">Desde $25.000</span>
-            <span class="prod-hint">Solo 5ml por ahora</span>
+            <span class="prod-price">Consultar precio</span>
+            <span class="prod-hint">Solo frasco completo (100ml)</span>
           </div>
         </div>
 
@@ -855,21 +1015,21 @@
           </div>
         </div>
 
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Bade'e Al Oud Amethyst" data-pid="badeoudamethyst" data-price5="25000" data-price100="165000">
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Bade'e Al Oud Amethyst" data-pid="badeoudamethyst" data-price100="165000">
           <div class="prod-photo"><img class="pid-img" data-pid="badeoudamethyst" alt="Bade'e Al Oud Amethyst"></div>
           <div class="prod-info">
             <h3>Bade'e Al Oud Amethyst</h3>
-            <span class="prod-price">Desde $25.000</span>
-            <span class="prod-hint">5ml y frasco completo</span>
+            <span class="prod-price">$165.000</span>
+            <span class="prod-hint">Solo frasco completo (100ml)</span>
           </div>
         </div>
 
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Liquid Brun" data-pid="liquidbrun" data-price100="225000">
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Liquid Brun" data-pid="liquidbrun" data-price5="25000" data-price10="45000" data-price100="225000">
           <div class="prod-photo"><img class="pid-img" data-pid="liquidbrun" alt="Liquid Brun"></div>
           <div class="prod-info">
             <h3>Liquid Brun</h3>
-            <span class="prod-price">$225.000</span>
-            <span class="prod-hint">Solo frasco completo (100ml)</span>
+            <span class="prod-price">Desde $25.000</span>
+            <span class="prod-hint">Decants 5ml, 10ml y frasco</span>
           </div>
         </div>
 
@@ -900,21 +1060,21 @@
           </div>
         </div>
 
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Yara" data-pid="yara" data-price100="155000">
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Yara" data-pid="yara" data-price5="25000" data-price10="45000" data-price100="155000">
           <div class="prod-photo"><img class="pid-img" data-pid="yara" alt="Yara"></div>
           <div class="prod-info">
             <h3>Yara</h3>
-            <span class="prod-price">$155.000</span>
-            <span class="prod-hint">Solo frasco completo (100ml)</span>
+            <span class="prod-price">Desde $25.000</span>
+            <span class="prod-hint">Decants 5ml, 10ml y frasco</span>
           </div>
         </div>
 
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Eclaire" data-pid="eclaire" data-price100="190000">
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Eclaire" data-pid="eclaire" data-price5="25000" data-price10="45000" data-price100="190000">
           <div class="prod-photo"><img class="pid-img" data-pid="eclaire" alt="Eclaire"></div>
           <div class="prod-info">
             <h3>Eclaire</h3>
-            <span class="prod-price">$190.000</span>
-            <span class="prod-hint">Solo frasco completo (100ml)</span>
+            <span class="prod-price">Desde $25.000</span>
+            <span class="prod-hint">Decants 5ml, 10ml y frasco</span>
           </div>
         </div>
 
@@ -1027,6 +1187,8 @@
         </div>
 
       </div>
+      <p class="cat-empty" id="catEmpty">No hay fragancias en este filtro por ahora.</p>
+      <div class="cat-test-cta"><span class="eyebrow">¿No sabes cuál elegir?</span><p>Responde 3 preguntas y te recomendamos tus 3 fragancias ideales.</p><a href="#/test" class="btn-primary" data-route="test">Test: encuentra tu aroma</a></div>
     </div>
   </section>
 
@@ -1081,6 +1243,20 @@
           <p>Sí. Cada decant proviene directamente del frasco de casa, con el mismo lote, la misma concentración y el mismo aroma.</p>
         </div>
       </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= TEST OLFATIVO ======================= -->
+<div class="page" id="page-test">
+  <div class="page-head">
+    <span class="eyebrow">Asesoría olfativa</span>
+    <h1>Encuentra tu aroma ideal</h1>
+    <p>Tres preguntas, tres recomendaciones. Sin compromiso: después eliges tamaño y coordinamos por WhatsApp.</p>
+  </div>
+  <section class="first-in-page">
+    <div class="container">
+      <div class="quiz-box reveal" id="quizBox"></div>
     </div>
   </section>
 </div>
@@ -1280,7 +1456,7 @@
     if(e.key === 'Escape') setMenuOpen(false);
   });
 
-  const ROUTES = ['home','coleccion','decant','proceso','confianza','contacto'];
+  const ROUTES = ['home','coleccion','test','decant','proceso','confianza','contacto'];
   function routeFromHash(){
     const h = window.location.hash.replace('#/','').replace('#','');
     return ROUTES.includes(h) ? h : 'home';
@@ -1303,6 +1479,8 @@
     });
     window.scrollTo({top: 0, behavior: 'auto'});
     revealPage(target);
+    if(route === 'home') startHeroCounter();
+    if(route === 'test' && typeof resetQuiz === 'function') resetQuiz();
     if(push) history.pushState({route}, '', route === 'home' ? '#/' : '#/' + route);
   }
   document.querySelectorAll('[data-route]').forEach(el => {
@@ -1561,6 +1739,7 @@
     if(price5) sizes.push({ value: '5', label: '5ml', price: price5 });
     if(price10) sizes.push({ value: '10', label: '10ml', price: price10 });
     if(price100) sizes.push({ value: '100', label: 'Frasco completo (100ml)', price: price100 });
+    if(!sizes.length && el.dataset.ask === '1') sizes.push({ value: '100', label: 'Frasco completo (100ml)', price: 0 });
 
     modalName.textContent = name;
     const info = PRODUCT_INFO[pid];
@@ -1572,7 +1751,7 @@
     sizes.forEach((s, i) => {
       const opt = document.createElement('label');
       opt.className = 'size-option';
-      opt.innerHTML = `<span class="lbl"><input type="radio" name="size" value="${s.value}"${i === 0 ? ' checked' : ''}> ${s.label}</span><span class="pr">${fmt(s.price)}</span>`;
+      opt.innerHTML = `<span class="lbl"><input type="radio" name="size" value="${s.value}"${i === 0 ? ' checked' : ''}> ${s.label}</span><span class="pr">${s.price ? fmt(s.price) : 'Consultar'}</span>`;
       modalSizes.appendChild(opt);
     });
 
@@ -1595,9 +1774,9 @@
       const ml = currentSize();
       const sizeInfo = sizes.find(s => s.value === ml);
       const price = sizeInfo ? sizeInfo.price : 0;
-      modalTotal.textContent = fmt(price);
+      modalTotal.textContent = price ? fmt(price) : 'Consultar';
       const msg = ml === '100'
-        ? encodeURIComponent(`Hola, quiero pedir el frasco completo de ${name} (100ml) (${fmt(price)}).`)
+        ? encodeURIComponent(price ? `Hola, quiero pedir el frasco completo de ${name} (100ml) (${fmt(price)}).` : `Hola, quiero pedir el frasco completo de ${name} (100ml). ¿Me confirmas el precio?`)
         : encodeURIComponent(`Hola, quiero pedir un decant de ${name} en ${ml}ml (${fmt(price)}).`);
       modalBuy.href = `https://wa.me/${WA_NUMBER}?text=${msg}`;
       updateSlides();
@@ -1621,6 +1800,280 @@
   modalClose.addEventListener('click', closeProductModal);
   modal.addEventListener('click', e => { if(e.target === modal) closeProductModal(); });
   window.addEventListener('keydown', e => { if(e.key === 'Escape') closeProductModal(); });
+
+
+  /* ---------- contador hero ---------- */
+  function startHeroCounter(){
+    var el = document.getElementById('heroCounter');
+    if(!el) return;
+    var wrap = el.parentNode;
+    var S = window.__hc = window.__hc || {};
+    cancelAnimationFrame(S.raf); clearTimeout(S.t1);
+    var target = Number(el.dataset.target) || 500;
+    el.textContent = '+0';
+    wrap.classList.remove('show');
+    var firstLoad = !S.played; S.played = true;
+    S.t1 = setTimeout(function(){
+      wrap.classList.add('show');
+      var start = performance.now(), dur = 2000;
+      function tick(now){
+        var t = Math.min(1, (now - start) / dur);
+        el.textContent = '+' + Math.round(target * (1 - Math.pow(1 - t, 3)));
+        if(t < 1) S.raf = requestAnimationFrame(tick);
+      }
+      S.raf = requestAnimationFrame(tick);
+    }, firstLoad ? 1800 : 200);
+  }
+
+  /* ---------- test olfativo ---------- */
+  const QUIZ_STEPS = [
+    { q: '¿En qué momento lo usarás más?', hint: 'Elige el entorno donde más quieres que brille tu fragancia.', key: 'momento',
+      opts: [
+        { v: 'dia', ico: '☀', t: 'Día a día', d: 'Oficina, universidad, calor de Barranquilla. Algo cómodo para todos los días.' },
+        { v: 'noche', ico: '☾', t: 'Noche y salidas', d: 'Fiestas, citas, planes de noche. Seducción y presencia.' },
+        { v: 'gala', ico: '✦', t: 'Elegancia y eventos', d: 'Reuniones formales y ocasiones especiales. Exclusividad y estatus.' } ] },
+    { q: '¿Qué aroma te atrae más?', hint: 'Elige el perfil que te hace sentir más tú.', key: 'aroma',
+      opts: [
+        { v: 'citrica', ico: '❖', t: 'Fresco y cítrico', d: 'Bergamota, manzana, piña, frescura limpia y energizante.' },
+        { v: 'dulce', ico: '❦', t: 'Dulce y gourmand', d: 'Vainilla, caramelo, café, praliné, frutas y flores dulces.' },
+        { v: 'maderas', ico: '◈', t: 'Maderas y oud', d: 'Maderas nobles, ámbar, especias cálidas y oud.' } ] },
+    { q: '¿Qué estela buscas?', hint: 'Define qué tan lejos quieres que se perciba tu presencia.', key: 'estela',
+      opts: [
+        { v: 'bestia', ico: '⚡', t: 'Modo bestia', d: 'Proyección fuerte y larga duración. Que se note cuando llegas.' },
+        { v: 'elegante', ico: '✧', t: 'Elegante y envolvente', d: 'Una burbuja personal, sofisticada y cercana. Nunca invasiva.' } ] }
+  ];
+  const QUIZ_PROFILES = {
+    nightout:{m:['noche'],a:'dulce',e:'bestia'}, hawasice:{m:['dia'],a:'citrica',e:'bestia'},
+    mandarinsky:{m:['dia'],a:'citrica',e:'elegante'}, hawasmalibu:{m:['dia'],a:'citrica',e:'elegante'},
+    khamrahqahwa:{m:['noche'],a:'dulce',e:'bestia'}, rebel:{m:['noche'],a:'dulce',e:'bestia'},
+    badeoudhonor:{m:['gala','noche'],a:'dulce',e:'elegante'}, clubdenuit:{m:['noche','dia'],a:'citrica',e:'bestia'},
+    badeoudamethyst:{m:['gala'],a:'maderas',e:'elegante'}, liquidbrun:{m:['noche'],a:'dulce',e:'bestia'},
+    amberoudgold:{m:['gala'],a:'maderas',e:'bestia'}, bhararaking:{m:['gala'],a:'maderas',e:'elegante'},
+    dubainightalharamain:{m:['gala','noche'],a:'maderas',e:'elegante'}, yara:{m:['dia'],a:'dulce',e:'elegante'},
+    eclaire:{m:['dia','noche'],a:'dulce',e:'elegante'}, clubdenuitwomen:{m:['gala','noche'],a:'dulce',e:'elegante'},
+    yaracandy:{m:['dia'],a:'dulce',e:'elegante'}, odysseycandee:{m:['dia'],a:'dulce',e:'elegante'},
+    nitrored:{m:['noche'],a:'maderas',e:'bestia'}, rayhaanelixir:{m:['gala'],a:'maderas',e:'bestia'},
+    clubdenuiturbanelixir:{m:['noche'],a:'maderas',e:'bestia'}, bharararomeintense:{m:['noche'],a:'maderas',e:'bestia'},
+    clubdenuiticonic:{m:['dia','gala'],a:'citrica',e:'elegante'}, bharararomeextradose:{m:['noche'],a:'maderas',e:'bestia'},
+    khamrah:{m:['noche'],a:'dulce',e:'bestia'}, asad:{m:['noche'],a:'maderas',e:'bestia'},
+    dubaichocolat:{m:['dia','noche'],a:'dulce',e:'elegante'}
+  };
+  var quizBox = document.getElementById('quizBox');
+  var quizStep = 0, quizAnswers = {};
+
+  function quizRecommend(){
+    const scored = Object.keys(QUIZ_PROFILES).map((pid, idx) => {
+      const p = QUIZ_PROFILES[pid];
+      let s = 0;
+      if(p.a === quizAnswers.aroma) s += 3;
+      if(p.m.indexOf(quizAnswers.momento) !== -1) s += 2;
+      if(p.e === quizAnswers.estela) s += 1.5;
+      return { pid, s, idx };
+    }).filter(x => document.querySelector('.prod-card[data-pid="' + x.pid + '"]'));
+    scored.sort((a, b) => b.s - a.s || a.idx - b.idx);
+    return scored.slice(0, 3);
+  }
+
+  function renderQuiz(){
+    if(!quizBox) return;
+    if(quizStep < QUIZ_STEPS.length){
+      const st = QUIZ_STEPS[quizStep];
+      const dots = QUIZ_STEPS.map((_, i) => '<span class="quiz-dot' + (i <= quizStep ? ' on' : '') + '"></span>').join('');
+      quizBox.innerHTML =
+        '<div class="quiz-progress">' + dots + '</div>' +
+        '<span class="quiz-count">Paso ' + (quizStep + 1) + ' de ' + QUIZ_STEPS.length + '</span>' +
+        '<h2 class="quiz-q">' + st.q + '</h2><p class="quiz-hint">' + st.hint + '</p>' +
+        '<div class="quiz-opts">' + st.opts.map(o =>
+          '<button type="button" class="quiz-opt" data-v="' + o.v + '"><span class="qo-ico">' + o.ico + '</span><h4>' + o.t + '</h4><p>' + o.d + '</p></button>').join('') + '</div>' +
+        (quizStep > 0 ? '<button type="button" class="quiz-back" id="quizBack">← Volver</button>' : '');
+      quizBox.querySelectorAll('.quiz-opt').forEach(btn => {
+        btn.addEventListener('click', () => {
+          quizAnswers[st.key] = btn.dataset.v;
+          btn.classList.add('picked');
+          setTimeout(() => { quizStep++; renderQuiz(); }, 220);
+        });
+      });
+      const back = document.getElementById('quizBack');
+      if(back) back.addEventListener('click', () => { quizStep--; renderQuiz(); });
+    } else {
+      const picks = quizRecommend();
+      quizBox.innerHTML =
+        '<div class="quiz-progress">' + QUIZ_STEPS.map(() => '<span class="quiz-dot on"></span>').join('') + '</div>' +
+        '<span class="quiz-count">Tus coincidencias ideales</span>' +
+        '<h2 class="quiz-q">Estas son tus 3 firmas recomendadas</h2>' +
+        '<p class="quiz-hint">Toca cualquiera para ver sus notas y elegir tamaño.</p>' +
+        '<div class="quiz-results" id="quizResults"></div>' +
+        '<div class="quiz-actions"><a class="btn-primary" id="quizWa" target="_blank" rel="noopener">Pedir asesoría por WhatsApp</a><button type="button" class="btn-ghost" id="quizRedo">Repetir el test</button></div>';
+      const wrap = document.getElementById('quizResults');
+      const names = [];
+      picks.forEach((pk, i) => {
+        const src = document.querySelector('.prod-card[data-pid="' + pk.pid + '"]');
+        const clone = src.cloneNode(true);
+        names.push(src.dataset.name);
+        clone.addEventListener('click', () => openProductModal(clone));
+        clone.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openProductModal(clone); } });
+        const item = document.createElement('div');
+        item.className = 'quiz-result-item';
+        item.innerHTML = '<span class="quiz-rank">' + (i === 0 ? 'Mejor coincidencia' : 'Opción ' + (i + 1)) + '</span>';
+        item.appendChild(clone);
+        wrap.appendChild(item);
+      });
+      const msg = encodeURIComponent('Hola, hice el test olfativo y me recomendaron: ' + names.join(', ') + '. Quisiera asesoría para elegir.');
+      document.getElementById('quizWa').href = 'https://wa.me/' + WA_NUMBER + '?text=' + msg;
+      document.getElementById('quizRedo').addEventListener('click', resetQuiz);
+    }
+  }
+  function resetQuiz(){ quizStep = 0; quizAnswers = {}; renderQuiz(); }
+  renderQuiz();
+
+  /* ---------- catálogo elegante: filtros, búsqueda, orden y tarjetas ---------- */
+  (function(){
+    var grid = document.querySelector('#page-coleccion .products-grid');
+    var chipsEl = document.getElementById('catChips');
+    var sortEl = document.getElementById('catSort');
+    var countEl = document.getElementById('catCount');
+    var emptyEl = document.getElementById('catEmpty');
+    var searchEl = document.getElementById('catSearch');
+    if(!grid || !chipsEl) return;
+    var BRAND = { nightout:'Afnan', hawasice:'Rasasi', mandarinsky:'Armaf', hawasmalibu:'Rasasi', khamrahqahwa:'Lattafa', rebel:'Afnan',
+      badeoudhonor:'Lattafa', clubdenuit:'Armaf', badeoudamethyst:'Lattafa', liquidbrun:'French Avenue', amberoudgold:'Al Haramain',
+      bhararaking:'Bharara', dubainightalharamain:'Al Haramain', yara:'Lattafa', eclaire:'Lattafa', clubdenuitwomen:'Armaf', yaracandy:'Lattafa',
+      odysseycandee:'Armaf', nitrored:'Dumont', rayhaanelixir:'Rayhaan', clubdenuiturbanelixir:'Armaf', bharararomeintense:'Bharara',
+      clubdenuiticonic:'Armaf', bharararomeextradose:'Bharara', khamrah:'Lattafa', asad:'Lattafa', dubaichocolat:'Armaf' };
+    var SUB = { nightout:'Frutal, especiado y nocturno', hawasice:'Frescura glacial, modo bestia', mandarinsky:'Cítrico y gourmand con azafrán',
+      hawasmalibu:'Frescura tropical de verano', khamrahqahwa:'Café especiado de lujo', rebel:'Dulce y rebelde para la noche',
+      badeoudhonor:'Dulce y cremoso con sándalo', clubdenuit:'El clásico fresco y versátil', badeoudamethyst:'Oud floral para noches especiales',
+      liquidbrun:'Vainilla y canela de nicho', amberoudgold:'Ámbar y oud en edición dorada', bhararaking:'Maderas nobles con carácter',
+      dubainightalharamain:'Oud y ámbar de noche árabe', yara:'Dulce, suave y envolvente', eclaire:'Caramelo y vainilla cremosa',
+      clubdenuitwomen:'Floral frutal y elegante', yaracandy:'Gourmand goloso y rosado', odysseycandee:'Dulce y juguetón',
+      nitrored:'Frutos rojos y especias', rayhaanelixir:'Oud oriental de lujo', clubdenuiturbanelixir:'Intenso, amaderado y urbano',
+      bharararomeintense:'Amaderado e intenso', clubdenuiticonic:'Fresco, aromático y versátil', bharararomeextradose:'Especiado y de alta proyección',
+      khamrah:'Dátiles, canela y vainilla', asad:'Amaderado, especiado y oscuro', dubaichocolat:'Chocolate y cacao gourmand' };
+    var MOOD = { nightout:'Salidas', hawasice:'Día a día', mandarinsky:'Día a día', hawasmalibu:'Playa & verano', khamrahqahwa:'Noches dulces',
+      rebel:'Modo bestia', badeoudhonor:'Eventos', clubdenuit:'Modo bestia', badeoudamethyst:'Elegancia', liquidbrun:'Salidas',
+      amberoudgold:'Presencia', bhararaking:'Eventos', dubainightalharamain:'Citas', yara:'Día a día', eclaire:'Citas',
+      clubdenuitwomen:'Salidas', yaracandy:'Día a día', odysseycandee:'Día a día', nitrored:'Modo bestia', rayhaanelixir:'Eventos',
+      clubdenuiturbanelixir:'Salidas', bharararomeintense:'Modo bestia', clubdenuiticonic:'Oficina', bharararomeextradose:'Modo bestia',
+      khamrah:'Noches dulces', asad:'Modo bestia', dubaichocolat:'Cita dulce' };
+    var BEST = ['nightout','hawasice','mandarinsky','hawasmalibu','khamrahqahwa'];
+    var FEM = ['yara','yaracandy','eclaire','clubdenuitwomen'];
+    var CATS = [
+      { id:'all', label:'Todas', test:function(){return true;} },
+      { id:'decant', label:'Decants disponibles', test:function(k){return k.d5||k.d10;} },
+      { id:'frasco', label:'Frasco completo', test:function(k){return k.d100;} },
+      { id:'gourmand', label:'Gourmand & dulces', test:function(k){return k.p && k.p.a==='dulce';} },
+      { id:'frescos', label:'Frescos & cítricos', test:function(k){return k.p && k.p.a==='citrica';} },
+      { id:'nocturnos', label:'Nocturnos & seductores', test:function(k){return k.p && k.p.m.indexOf('noche')!==-1;} },
+      { id:'oud', label:'Oud & orientales', test:function(k){return k.p && k.p.a==='maderas';} },
+      { id:'fem', label:'Femeninos & florales', test:function(k){return FEM.indexOf(k.pid)!==-1;} }
+    ];
+    function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+    var NOTE_OVERRIDE = { eclaire:['Caramelo','Miel','Vainilla'], liquidbrun:['Canela','Bergamota','Vainilla'], khamrah:['Canela','Dátiles','Vainilla'] };
+    function noteList(pid){
+      if(NOTE_OVERRIDE[pid]) return NOTE_OVERRIDE[pid];
+      var info = (typeof PRODUCT_INFO !== 'undefined') ? PRODUCT_INFO[pid] : null;
+      if(!info) return [];
+      return info.notes.replace(/\.$/,'').replace(/ y /g,', ').split(',').map(function(s){ s = s.trim(); return s.charAt(0).toUpperCase()+s.slice(1); }).filter(function(s){ return s && s.length <= 20; });
+    }
+    function refreshCard(card){
+      var ml = card.dataset.sel, price = card.dataset['price' + ml];
+      var p = card.querySelector('.pc-price'), cap = card.querySelector('.pc-cap');
+      if(p) p.textContent = price ? fmt(price) : 'Consultar precio';
+      if(cap) cap.textContent = ml === '100' ? 'Frasco sellado' : 'Decant ' + ml + 'ml';
+    }
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.prod-card')).map(function(el, i){
+      var ds = el.dataset, pid = ds.pid;
+      var prices = [ds.price5, ds.price10, ds.price100].filter(Boolean).map(Number);
+      var k = { el: el, i: i, pid: pid, name: ds.name, min: prices.length ? Math.min.apply(null, prices) : 999999,
+        d5: !!ds.price5, d10: !!ds.price10, d100: !!ds.price100 || ds.ask === '1',
+        p: (typeof QUIZ_PROFILES !== 'undefined') ? QUIZ_PROFILES[pid] : null, brand: BRAND[pid] || '', sub: SUB[pid] || '', notes: noteList(pid) };
+      k.hay = norm([k.name, k.brand, k.sub, k.notes.join(' ')].join(' '));
+      // enhance card markup
+      var photo = el.querySelector('.prod-photo'), info = el.querySelector('.prod-info');
+      var badges = '<div class="pc-badges">' + (BEST.indexOf(pid) !== -1 ? '<span class="pc-badge gold">Bestseller</span>' : '') +
+        '<span class="pc-badge ghost">' + ((k.d5||k.d10) && k.d100 ? 'Decant &amp; frasco' : (k.d100 ? 'Frasco original' : 'Decant')) + '</span>' +
+        (MOOD[pid] ? '<span class="pc-badge mood">' + MOOD[pid] + '</span>' : '') + '</div>';
+      photo.insertAdjacentHTML('beforeend', badges);
+      if(typeof BOX_IMAGES !== 'undefined' && BOX_IMAGES[pid]){
+        photo.insertAdjacentHTML('beforeend', '<div class="pc-toggle"><button type="button" class="on" data-view="frasco">Frasco</button><button type="button" data-view="caja">Caja</button></div>' +
+          '<button type="button" class="pc-arrow prev" aria-label="Imagen anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>' +
+          '<button type="button" class="pc-arrow next" aria-label="Imagen siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>');
+      }
+      var sizeDefs = [['5',k.d5,ds.price5],['10',k.d10,ds.price10],['100',k.d100,ds.price100]];
+      var first = sizeDefs.filter(function(s){ return s[1]; })[0];
+      el.dataset.sel = first ? first[0] : '';
+      info.innerHTML = (k.brand ? '<span class="pc-brand">' + k.brand + '</span>' : '') + '<h3>' + ds.name + '</h3>' +
+        (k.sub ? '<span class="pc-sub">' + k.sub + '</span>' : '') +
+        (k.notes.length ? '<div class="pc-tags">' + k.notes.slice(0,3).map(function(n){ return '<span>' + n + '</span>'; }).join('') + '</div>' : '') +
+        '<div class="pc-sizes">' + sizeDefs.map(function(s){ return '<button type="button" class="pc-size' + (first && s[0] === first[0] ? ' on' : '') + '" data-ml="' + s[0] + '"' + (s[1] ? '' : ' disabled') + '>' + s[0] + 'ml</button>'; }).join('') + '</div>' +
+        '<span class="pc-price"></span><span class="pc-cap"></span>' +
+        '<div class="pc-actions"><button type="button" class="pc-notes">Notas</button><button type="button" class="pc-bag" aria-label="Pedir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></button></div>';
+      refreshCard(el);
+      return k;
+    });
+    // Controles internos de la tarjeta (fase de captura para que no se abra el modal)
+    document.addEventListener('click', function(e){
+      var t = e.target.closest ? e.target : null;
+      if(!t) return;
+      var btn = t.closest('.pc-toggle button, .pc-arrow, .pc-size, .pc-notes, .pc-bag');
+      if(!btn) return;
+      e.stopPropagation(); e.preventDefault();
+      var card = btn.closest('.prod-card'); if(!card) return;
+      var pid = card.dataset.pid;
+      if(btn.matches('.pc-toggle button, .pc-arrow')){
+        var img = card.querySelector('.prod-photo img.pid-img');
+        var box = btn.matches('.pc-arrow') ? !img.classList.contains('is-box') : btn.dataset.view === 'caja';
+        img.src = box ? BOX_IMAGES[pid] : PRODUCT_IMAGES[pid];
+        img.classList.toggle('is-box', box);
+        card.querySelectorAll('.pc-toggle button').forEach(function(x){ x.classList.toggle('on', (x.dataset.view === 'caja') === box); });
+      } else if(btn.matches('.pc-size')){
+        if(btn.disabled) return;
+        card.dataset.sel = btn.dataset.ml;
+        card.querySelectorAll('.pc-size').forEach(function(x){ x.classList.toggle('on', x === btn); });
+        refreshCard(card);
+      } else if(btn.matches('.pc-notes')){
+        openProductModal(card);
+      } else if(btn.matches('.pc-bag')){
+        var ml = card.dataset.sel, price = card.dataset['price' + ml];
+        var label = ml === '100' ? 'el frasco completo' : 'el decant de ' + ml + 'ml';
+        var msg = encodeURIComponent('Hola, quiero ' + label + ' de ' + card.dataset.name + (price ? ' (' + fmt(price) + ')' : '') + '. ¿Me confirmas el precio?');
+        window.open('https://wa.me/' + WA_NUMBER + '?text=' + msg, '_blank');
+      }
+    }, true);
+
+    var current = 'all';
+    CATS.forEach(function(cat){
+      var n = cards.filter(function(k){ return cat.test(k); }).length;
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'cat-chip' + (cat.id === 'all' ? ' on' : '');
+      b.innerHTML = cat.label + ' <span class="cc-n">(' + n + ')</span>';
+      b.addEventListener('click', function(){
+        current = cat.id;
+        chipsEl.querySelectorAll('.cat-chip').forEach(function(x){ x.classList.toggle('on', x === b); });
+        apply();
+      });
+      chipsEl.appendChild(b);
+    });
+    function apply(){
+      var cat = CATS.filter(function(c){ return c.id === current; })[0];
+      var q = norm(searchEl ? searchEl.value.trim() : '');
+      var list = cards.filter(function(k){ return cat.test(k) && (!q || k.hay.indexOf(q) !== -1); });
+      var mode = sortEl.value;
+      list.sort(function(a, b){
+        if(mode === 'asc') return a.min - b.min || a.i - b.i;
+        if(mode === 'desc') return b.min - a.min || a.i - b.i;
+        if(mode === 'name') return a.name.localeCompare(b.name, 'es');
+        return a.i - b.i;
+      });
+      cards.forEach(function(k){ k.el.style.display = 'none'; });
+      list.forEach(function(k){ k.el.style.display = ''; grid.appendChild(k.el); });
+      countEl.innerHTML = 'Mostrando <b>' + list.length + '</b> de ' + cards.length + ' fragancias';
+      emptyEl.style.display = list.length ? 'none' : 'block';
+    }
+    sortEl.addEventListener('change', apply);
+    if(searchEl) searchEl.addEventListener('input', apply);
+    apply();
+  })();
 
   /* ---------- combo modal ---------- */
   const comboModal = document.getElementById('comboModal');
