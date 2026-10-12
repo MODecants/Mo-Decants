@@ -821,6 +821,21 @@
   @media(max-width:700px){ .pc-arrow{width:28px;height:28px;} .pc-arrow svg{width:13px;height:13px;} .pc-arrow.prev{left:.35rem;} .pc-arrow.next{right:.35rem;} }
   .cat-test-cta{text-align:center;margin:3.2rem auto 0;padding:2.4rem 1.4rem;border-top:1px solid var(--line);max-width:640px;}
   .cat-test-cta p{color:var(--ivory-dim);font-size:.95rem;margin:.9rem 0 1.6rem;line-height:1.6;}
+
+  /* ---------- móvil: frasco protagonista ---------- */
+  @media(max-width:700px){
+    #page-coleccion .prod-photo{aspect-ratio:1/1.38;padding:2.2rem .2rem 2.5rem;box-sizing:border-box;}
+    #page-coleccion .prod-photo img{width:100%;height:100%;transform:scale(1.12);filter:drop-shadow(0 14px 22px rgba(0,0,0,.6)) drop-shadow(0 0 26px rgba(201,164,76,.22));}
+    #page-coleccion .prod-photo img.is-box{transform:scale(1.04);}
+    #page-coleccion .prod-photo::after{content:'';position:absolute;left:50%;top:52%;width:86%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(201,164,76,.22);background:radial-gradient(circle,rgba(201,164,76,.14),transparent 68%);z-index:0;pointer-events:none;}
+    .pc-badges{flex-direction:row;flex-wrap:nowrap;top:.5rem;left:.5rem;right:.5rem;gap:.3rem;}
+    .pc-badge{white-space:nowrap;}
+    .pc-badge.ghost{display:none;}
+    .pc-badge.mood{font-size:.46rem;padding:.3rem .55rem;}
+    .pc-arrow{top:auto;bottom:.45rem;transform:none;width:26px;height:26px;}
+    .pc-arrow.prev{left:.45rem;} .pc-arrow.next{left:2.2rem;right:auto;}
+    .pc-toggle{right:.45rem;bottom:.45rem;}
+  }
 </style>
 </head>
 <body>
