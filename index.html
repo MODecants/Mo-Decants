@@ -824,17 +824,18 @@
 
   /* ---------- móvil: frasco protagonista ---------- */
   @media(max-width:700px){
-    #page-coleccion .prod-photo{aspect-ratio:1/1.38;padding:2.2rem .2rem 2.5rem;box-sizing:border-box;}
-    #page-coleccion .prod-photo img{width:100%;height:100%;transform:scale(1.12);filter:drop-shadow(0 14px 22px rgba(0,0,0,.6)) drop-shadow(0 0 26px rgba(201,164,76,.22));}
-    #page-coleccion .prod-photo img.is-box{transform:scale(1.04);}
-    #page-coleccion .prod-photo::after{content:'';position:absolute;left:50%;top:52%;width:86%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(201,164,76,.22);background:radial-gradient(circle,rgba(201,164,76,.14),transparent 68%);z-index:0;pointer-events:none;}
-    .pc-badges{flex-direction:row;flex-wrap:nowrap;top:.5rem;left:.5rem;right:.5rem;gap:.3rem;}
-    .pc-badge{white-space:nowrap;}
+    #page-coleccion .prod-photo{aspect-ratio:1/1.6;padding:0;overflow:hidden;}
+    #page-coleccion .prod-photo img.pid-img{position:absolute;left:.7rem;right:.7rem;top:2.4rem;bottom:2.6rem;width:calc(100% - 1.4rem);height:calc(100% - 5rem);object-fit:contain;transform:none !important;filter:drop-shadow(0 12px 18px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(201,164,76,.2));}
+    #page-coleccion .prod-card:hover .prod-photo img{transform:none !important;}
+    #page-coleccion .prod-photo::after{content:'';position:absolute;left:50%;top:52%;width:78%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(201,164,76,.2);background:radial-gradient(circle,rgba(201,164,76,.12),transparent 68%);z-index:0;pointer-events:none;}
+    .pc-badges{flex-direction:row;flex-wrap:nowrap;top:.5rem;left:.5rem;right:.5rem;gap:.3rem;overflow:hidden;}
+    .pc-badge{white-space:nowrap;flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;}
     .pc-badge.ghost{display:none;}
     .pc-badge.mood{font-size:.46rem;padding:.3rem .55rem;}
-    .pc-arrow{top:auto;bottom:.45rem;transform:none;width:26px;height:26px;}
-    .pc-arrow.prev{left:.45rem;} .pc-arrow.next{left:2.2rem;right:auto;}
-    .pc-toggle{right:.45rem;bottom:.45rem;}
+    .pc-arrow{top:50%;bottom:auto;transform:translateY(-50%);width:24px;height:24px;opacity:.7;}
+    .pc-arrow.prev{left:.3rem;} .pc-arrow.next{right:.3rem;left:auto;}
+    .pc-toggle{right:50%;transform:translateX(50%);bottom:.5rem;}
+    .pc-toggle button{font-size:.58rem;padding:.28rem .55rem;}
   }
 </style>
 </head>
@@ -1003,6 +1004,33 @@
           </div>
         </div>
 
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Liquid Brun" data-pid="liquidbrun" data-price5="25000" data-price10="45000" data-price100="225000">
+          <div class="prod-photo"><img class="pid-img" data-pid="liquidbrun" alt="Liquid Brun"></div>
+          <div class="prod-info">
+            <h3>Liquid Brun</h3>
+            <span class="prod-price">Desde $25.000</span>
+            <span class="prod-hint">Decants 5ml, 10ml y frasco</span>
+          </div>
+        </div>
+
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Eclaire" data-pid="eclaire" data-price5="25000" data-price10="45000" data-price100="190000">
+          <div class="prod-photo"><img class="pid-img" data-pid="eclaire" alt="Eclaire"></div>
+          <div class="prod-info">
+            <h3>Eclaire</h3>
+            <span class="prod-price">Desde $25.000</span>
+            <span class="prod-hint">Decants 5ml, 10ml y frasco</span>
+          </div>
+        </div>
+
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Yara" data-pid="yara" data-price5="25000" data-price10="45000" data-price100="155000">
+          <div class="prod-photo"><img class="pid-img" data-pid="yara" alt="Yara"></div>
+          <div class="prod-info">
+            <h3>Yara</h3>
+            <span class="prod-price">Desde $25.000</span>
+            <span class="prod-hint">Decants 5ml, 10ml y frasco</span>
+          </div>
+        </div>
+
         <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="9PM Rebel" data-pid="rebel" data-ask="1">
           <div class="prod-photo"><img class="pid-img" data-pid="rebel" alt="9PM Rebel"></div>
           <div class="prod-info">
@@ -1012,11 +1040,11 @@
           </div>
         </div>
 
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Bade'e Al Oud Honor & Glory" data-pid="badeoudhonor" data-ask="1">
+        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Bade'e Al Oud Honor & Glory" data-pid="badeoudhonor" data-price100="165000">
           <div class="prod-photo"><img class="pid-img" data-pid="badeoudhonor" alt="Bade'e Al Oud Honor &amp; Glory"></div>
           <div class="prod-info">
             <h3>Bade'e Al Oud Honor &amp; Glory</h3>
-            <span class="prod-price">Consultar precio</span>
+            <span class="prod-price">$165.000</span>
             <span class="prod-hint">Solo frasco completo (100ml)</span>
           </div>
         </div>
@@ -1036,15 +1064,6 @@
             <h3>Bade'e Al Oud Amethyst</h3>
             <span class="prod-price">$165.000</span>
             <span class="prod-hint">Solo frasco completo (100ml)</span>
-          </div>
-        </div>
-
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Liquid Brun" data-pid="liquidbrun" data-price5="25000" data-price10="45000" data-price100="225000">
-          <div class="prod-photo"><img class="pid-img" data-pid="liquidbrun" alt="Liquid Brun"></div>
-          <div class="prod-info">
-            <h3>Liquid Brun</h3>
-            <span class="prod-price">Desde $25.000</span>
-            <span class="prod-hint">Decants 5ml, 10ml y frasco</span>
           </div>
         </div>
 
@@ -1072,24 +1091,6 @@
             <h3>Dubai Night Al Haramain</h3>
             <span class="prod-price">$275.000</span>
             <span class="prod-hint">Solo frasco completo (100ml)</span>
-          </div>
-        </div>
-
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Yara" data-pid="yara" data-price5="25000" data-price10="45000" data-price100="155000">
-          <div class="prod-photo"><img class="pid-img" data-pid="yara" alt="Yara"></div>
-          <div class="prod-info">
-            <h3>Yara</h3>
-            <span class="prod-price">Desde $25.000</span>
-            <span class="prod-hint">Decants 5ml, 10ml y frasco</span>
-          </div>
-        </div>
-
-        <div class="prod-card" tabindex="0" role="button" aria-haspopup="dialog" data-name="Eclaire" data-pid="eclaire" data-price5="25000" data-price10="45000" data-price100="190000">
-          <div class="prod-photo"><img class="pid-img" data-pid="eclaire" alt="Eclaire"></div>
-          <div class="prod-info">
-            <h3>Eclaire</h3>
-            <span class="prod-price">Desde $25.000</span>
-            <span class="prod-hint">Decants 5ml, 10ml y frasco</span>
           </div>
         </div>
 
@@ -1970,7 +1971,7 @@
       clubdenuitwomen:'Salidas', yaracandy:'Día a día', odysseycandee:'Día a día', nitrored:'Modo bestia', rayhaanelixir:'Eventos',
       clubdenuiturbanelixir:'Salidas', bharararomeintense:'Modo bestia', clubdenuiticonic:'Oficina', bharararomeextradose:'Modo bestia',
       khamrah:'Noches dulces', asad:'Modo bestia', dubaichocolat:'Cita dulce' };
-    var BEST = ['nightout','hawasice','mandarinsky','hawasmalibu','khamrahqahwa'];
+    var BEST = ['nightout','hawasice','mandarinsky','hawasmalibu','khamrahqahwa','liquidbrun','eclaire','yara'];
     var FEM = ['yara','yaracandy','eclaire','clubdenuitwomen'];
     var CATS = [
       { id:'all', label:'Todas', test:function(){return true;} },
